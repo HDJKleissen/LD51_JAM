@@ -77,7 +77,7 @@ public class RobotController : MonoBehaviour
             verticalInput *= moveLimiter;
         }
 
-        body.velocity = new Vector2(horizontalInput * MovementSpeed, verticalInput * MovementSpeed);
+        body.velocity = new Vector2(horizontalInput, verticalInput) * MovementSpeed;
     }
     
 
