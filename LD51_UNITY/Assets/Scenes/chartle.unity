@@ -180,6 +180,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 274431102172496499, guid: f7120ca3fa4d1434eb65a57ef2b9d8fc, type: 3}
+      propertyPath: Active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274431102172496499, guid: f7120ca3fa4d1434eb65a57ef2b9d8fc, type: 3}
       propertyPath: LinkedToggleables.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -191,6 +195,14 @@ PrefabInstance:
       propertyPath: LinkedToggleables.Array.data[1]
       value: 
       objectReference: {fileID: 833870674}
+    - target: {fileID: 274431102198939581, guid: f7120ca3fa4d1434eb65a57ef2b9d8fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274431103075850639, guid: f7120ca3fa4d1434eb65a57ef2b9d8fc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f7120ca3fa4d1434eb65a57ef2b9d8fc, type: 3}
@@ -513,9 +525,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1947106771601845105, guid: 627b700cf9790604ab3655f1be745352, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5447598144321958176, guid: 627b700cf9790604ab3655f1be745352, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629656106719615096, guid: 627b700cf9790604ab3655f1be745352, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
