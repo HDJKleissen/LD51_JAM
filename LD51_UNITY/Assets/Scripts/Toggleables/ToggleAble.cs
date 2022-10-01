@@ -18,4 +18,9 @@ public abstract class Toggleable : MonoBehaviour
     }
 
     public abstract void HandleStateChange();
+
+    private void OnValidate()
+    {
+        HandleStateChange();
+    }
 }

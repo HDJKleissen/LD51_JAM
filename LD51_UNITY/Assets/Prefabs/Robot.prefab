@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8aab88af12142346a3db0242fec1911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovementSpeed>k__BackingField: 5
+  <MovementSpeed>k__BackingField: 10
 --- !u!114 &6860876139766115668
 MonoBehaviour:
   m_ObjectHideFlags: 0
