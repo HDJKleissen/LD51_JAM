@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Walkway : Toggleable
 {
+    public Vector2 WalkwayDirection;
+    public float WalkwaySpeed; 
+
     public override void HandleStateChange()
     {
 
