@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1976704200}
   m_Lens:
     FieldOfView: 34
     OrthographicSize: 5
@@ -217,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332180439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.88, y: 1.13, z: -20}
+  m_LocalPosition: {x: -1.2162, y: -1.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.88, y: 1.13, z: -20}
+  m_LocalPosition: {x: -1.2162, y: -1.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -831,6 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentActiveRobot: {fileID: 1602763225}
+  followRobotCamera: {fileID: 332180440}
 --- !u!4 &1828272453
 Transform:
   m_ObjectHideFlags: 0
@@ -909,6 +910,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1976704200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6860876139766115665, guid: 5f427f870924fbf4e9fc09d2f73c70bd, type: 3}
+  m_PrefabInstance: {fileID: 6860876139270862713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &274431103322901533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1221,9 +1227,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1947106771601845105, guid: 627b700cf9790604ab3655f1be745352, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5447598144321958176, guid: 627b700cf9790604ab3655f1be745352, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629656106719615096, guid: 627b700cf9790604ab3655f1be745352, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
