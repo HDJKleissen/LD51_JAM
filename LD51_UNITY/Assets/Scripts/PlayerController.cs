@@ -27,7 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if(collision.tag == "interactable")
+        {
+            collision.GetComponent<Interactable>().Interact();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
