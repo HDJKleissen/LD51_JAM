@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
     Timer timer;
     public RobotController CurrentActiveRobot;
+    public CinemachineVirtualCamera followRobotCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
             if (rs.IsActive)
             {
                 rs.SpawnRobot();
+                
             }
         }
     }
