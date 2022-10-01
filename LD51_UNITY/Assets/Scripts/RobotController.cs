@@ -5,12 +5,14 @@ using UnityEngine;
 public class RobotController : MonoBehaviour
 {
     [field: SerializeField] public float MovementSpeed { get; set; }
-
+    
     private Rigidbody2D body;
 
     private float horizontalInput;
     private float verticalInput;
     private float moveLimiter = 0.7f;
+
+    Vector2 moveSpeedModifier;
 
     void Start()
     {
@@ -50,11 +52,25 @@ public class RobotController : MonoBehaviour
         {
             collision.GetComponent<Collectable>().PickUp();
         }
+        Walkway walkway = collision.GetComponent<Walkway>();
+        if (walkway != null && walkway.IsToggledOn)
+        {
+            //float modifier = Vector2.Dot(walkway.WalkwayDirection.normalized, new Vector2(horizontalInput, verticalInput).normalized);
+            moveSpeedModifier = walkway.WalkwayDirection * walkway.WalkwaySpeed;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
+        Walkway walkway = collision.GetComponent<Walkway>();
+        if (walkway != null && walkway.IsToggledOn)
+        {
+            moveSpeedModifier = Vector2.zero;
+        }
     }
 
     //spritedefault rotation should be looking right
@@ -77,7 +93,7 @@ public class RobotController : MonoBehaviour
             verticalInput *= moveLimiter;
         }
 
-        body.velocity = new Vector2(horizontalInput, verticalInput) * MovementSpeed;
+        body.velocity = new Vector2(horizontalInput, verticalInput) * MovementSpeed + moveSpeedModifier;
     }
     
 
