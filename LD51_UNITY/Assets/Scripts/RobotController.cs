@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RobotController : MonoBehaviour
 {
-    [field: SerializeField] public float MovementSpeed { get; private set; }
+    [field: SerializeField] public float MovementSpeed { get; set; }
 
     private Rigidbody2D body;
 
@@ -44,6 +44,11 @@ public class RobotController : MonoBehaviour
         if(collision.tag == "robotSpawner")
         {
             collision.GetComponent<RobotSpawner>().TurnOn();
+        }
+
+        if (collision.tag == "collectable")
+        {
+            collision.GetComponent<Collectable>().PickUp();
         }
     }
 

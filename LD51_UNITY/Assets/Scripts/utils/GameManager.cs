@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
 
     [field: SerializeField] public Camera Camera { get; private set; }
 
-    [field: SerializeField] public GameObject Player { get; private set; }
+    [field: SerializeField] public Player Player { get; private set; }
     [field: SerializeField] public GameObject World { get; private set; }
     [HideInInspector] public List<RobotSpawner> RobotSpawners = new List<RobotSpawner>();
 
