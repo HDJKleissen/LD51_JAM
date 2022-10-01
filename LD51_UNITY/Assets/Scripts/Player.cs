@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     Timer timer;
     public RobotController CurrentActiveRobot;
     public CinemachineVirtualCamera followRobotCamera;
+
+    public List<Collectable> CollectedItems;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,13 @@ public class Player : MonoBehaviour
         
     }
 
+    public void AddCollectedItem(Collectable collectable)
+    {
+        //animation
+        //sfx
+        CollectedItems.Add(collectable);
+    }
+
     void SpawnRobot()
     {
         Debug.Log("TRying to spawn robot..");
@@ -31,7 +41,7 @@ public class Player : MonoBehaviour
         {
             if (rs.IsActive)
             {
-                rs.SpawnRobot();
+                rs.SpawnRobot(CollectedItems);
                 return;
             }
         }
