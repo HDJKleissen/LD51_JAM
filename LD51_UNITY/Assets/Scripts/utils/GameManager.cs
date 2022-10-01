@@ -17,8 +17,6 @@ public class GameManager : Singleton<GameManager>
     [field: SerializeField] public GameObject World { get; private set; }
     [HideInInspector] public List<RobotSpawner> RobotSpawners = new List<RobotSpawner>();
 
-
-    //statemachine should be a stack for more complex UI states prob with transitions etc
     public enum StateMachine
     {
         InMenu,
@@ -35,41 +33,20 @@ public class GameManager : Singleton<GameManager>
         InitGame();
     }
 
-    //gameManager is not destroyed on reload, so make sure to reset everything on scenechange
-    //nasty way to reload references..
     public void InitGame()
     {
         mainMenu = GameObject.Find("MainMenuCanvas").transform.GetChild(0).gameObject;
         Camera = GameObject.FindObjectOfType<Camera>();
-        gameOver = false;
-        stateMachine = StateMachine.InGame;
+        stateMachine = StateMachine.InMenu;
     }
 
     void Update()
     {
-         //escape to go to menu and return
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(Camera == null)
         {
-            if (stateMachine == StateMachine.InMenu)
-            {
-                stateMachine = StateMachine.InGame;
-                mainMenu.SetActive(false);
-            }
-            else
-            {
-                stateMachine = StateMachine.InMenu;
-                mainMenu.SetActive(true);
-
-            }
+            InitGame();
         }
 
-        if (gameOver)
-            return;
-
-        if(stateMachine == StateMachine.InGame)
-        {
-
-        }
     }
 
     public IEnumerator GameOver()
@@ -77,17 +54,15 @@ public class GameManager : Singleton<GameManager>
         if (gameOver)
             yield break;
 
-        gameOver = true;
+        stateMachine = StateMachine.InMenu;
 
         yield return new WaitForSeconds(1.5f);
-        mainMenu.SetActive(true);
+        
+        //todo
     }
 
     protected override void Awake()
     {
-        //Make this game object persistent
-        DontDestroyOnLoad(gameObject);
-
 
         base.Awake();
     }

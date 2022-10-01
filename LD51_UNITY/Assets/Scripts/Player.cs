@@ -12,13 +12,21 @@ public class Player : MonoBehaviour
     public List<Collectable> CollectedItems;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         timer = GetComponent<Timer>();
+    }
+
+    private void OnEnable()
+    {
         timer.OnTimeOver += DeactivateRobot;
         timer.OnTimeOver += SpawnRobot;
+    }
 
-
+    private void OnDisable()
+    {
+        timer.OnTimeOver -= DeactivateRobot;
+        timer.OnTimeOver -= SpawnRobot;
     }
 
     // Update is called once per frame
@@ -51,6 +59,7 @@ public class Player : MonoBehaviour
 
     void DeactivateRobot()
     {
-        CurrentActiveRobot.Deactivate();
+        if(CurrentActiveRobot != null)
+            CurrentActiveRobot.Deactivate();
     }
 }
