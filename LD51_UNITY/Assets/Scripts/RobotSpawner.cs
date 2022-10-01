@@ -12,12 +12,44 @@ public class RobotSpawner : MonoBehaviour
     {
         //add itself to the list
         GameManager.Instance.RobotSpawners.Add(this);
+
+        if (IsActive)
+        {
+            TurnOn();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
        
+    }
+    
+    public void TurnOff()
+    {
+        //animate
+        GetComponent<Renderer>().material.color = Color.white;
+        IsActive = false;
+        //sfx
+    }
+
+    public void TurnOn()
+    {
+        //animate
+        GetComponent<Renderer>().material.color = Color.red;
+        //sfx
+
+        //turn others off
+        foreach (RobotSpawner rs in GameManager.Instance.RobotSpawners)
+        {
+            //skip itself
+            if (this == rs)
+                continue;
+
+            rs.TurnOff();
+        }
+
+        IsActive = true;
     }
 
     public void SpawnRobot()

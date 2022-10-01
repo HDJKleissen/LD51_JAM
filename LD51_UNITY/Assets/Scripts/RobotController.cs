@@ -40,6 +40,11 @@ public class RobotController : MonoBehaviour
         {
             collision.GetComponent<Interactable>().Interact();
         }
+
+        if(collision.tag == "robotSpawner")
+        {
+            collision.GetComponent<RobotSpawner>().TurnOn();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

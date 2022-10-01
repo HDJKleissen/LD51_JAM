@@ -32,9 +32,11 @@ public class Player : MonoBehaviour
             if (rs.IsActive)
             {
                 rs.SpawnRobot();
-                
+                return;
             }
         }
+
+        Debug.LogError("No Robot Spawners are active..");
     }
 
     void DeactivateRobot()
