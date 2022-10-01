@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class RobotController : MonoBehaviour
 {
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -24,6 +25,14 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical"); // -1 is down
     }
 
+    public void Deactivate() {
+        GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<DisplayTimer>().overheadText);
+        Destroy(GetComponent<DisplayTimer>());
+        Destroy(this);
+    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

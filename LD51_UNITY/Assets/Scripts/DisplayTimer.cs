@@ -6,11 +6,11 @@ using TMPro;
 public class DisplayTimer : MonoBehaviour
 {
     Timer timer;
-    [SerializeField] TextMeshProUGUI overheadText;
+    [SerializeField] public TextMeshProUGUI overheadText;
     // Start is called before the first frame update
     void Start()
     {
-        timer = GetComponent<Timer>();
+        timer = GameManager.Instance.Player.GetComponent<Timer>();
     }
 
     // Update is called once per frame
