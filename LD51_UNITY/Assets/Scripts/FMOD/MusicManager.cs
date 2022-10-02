@@ -83,7 +83,6 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        SetMusicSection(section);
         if (lastBeat != timelineInfo.currentBeat)
         {
             lastBeat = timelineInfo.currentBeat;
