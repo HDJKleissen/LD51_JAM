@@ -3433,7 +3433,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 774622092147802801, guid: 7df952d89b6a50342abe20bf76799b54, type: 3}
       propertyPath: m_Intensity
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 774622092147802801, guid: 7df952d89b6a50342abe20bf76799b54, type: 3}
       propertyPath: m_ShadowIntensity
@@ -3453,7 +3453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 774622092277655595, guid: 7df952d89b6a50342abe20bf76799b54, type: 3}
       propertyPath: m_Intensity
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 774622092277655595, guid: 7df952d89b6a50342abe20bf76799b54, type: 3}
       propertyPath: m_LightVolumeIntensity
@@ -3469,7 +3469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 774622092483461473, guid: 7df952d89b6a50342abe20bf76799b54, type: 3}
       propertyPath: m_Intensity
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 774622092483461473, guid: 7df952d89b6a50342abe20bf76799b54, type: 3}
       propertyPath: m_ShadowIntensity
