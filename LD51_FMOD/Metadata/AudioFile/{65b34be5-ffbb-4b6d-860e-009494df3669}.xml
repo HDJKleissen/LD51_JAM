@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{65b34be5-ffbb-4b6d-860e-009494df3669}">
+		<property name="assetPath">
+			<value>Bleeps09.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3181262e-aec2-4dab-b814-aa9ea67454ab}</destination>
+		</relationship>
+	</object>
+</objects>
