@@ -6,7 +6,7 @@ public class Lever : Interactable
 {
     [SerializeField] bool Active;
 
-    public Sprite OnSprite, OffSprite;
+    public GameObject OnSprite, OffSprite;
 
     public List<Toggleable> LinkedToggleables;
 
@@ -20,10 +20,7 @@ public class Lever : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        if(spriteRenderer == null)
-        {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        }
+        
     }
 
     // Update is called once per frame
@@ -34,7 +31,8 @@ public class Lever : Interactable
 
     void SetCorrectSprite()
     {
-        spriteRenderer.sprite = Active ? OnSprite : OffSprite;
+        OnSprite.SetActive(Active);
+        OffSprite.SetActive(!Active);
     }
 
     void HandleToggleables()
@@ -48,5 +46,6 @@ public class Lever : Interactable
     private void OnValidate()
     {
         SetCorrectSprite();
+        HandleToggleables();
     }
 }

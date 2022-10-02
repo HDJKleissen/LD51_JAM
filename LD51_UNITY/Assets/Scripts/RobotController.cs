@@ -4,129 +4,88 @@ using UnityEngine;
 
 public class RobotController : MonoBehaviour
 {
-    [SerializeField] RobotAnimator robotAnimator;
+    [field: SerializeField] public float MovementSpeed { get; set; }
+
     private Rigidbody2D body;
 
-    [field: SerializeField] public float MovementSpeed { get; set; }
-    [SerializeField] float isometricYMoveModifier = .6f;
-
-    public bool Interacting = false;
-    Interactable closestInteractable;
-
-
+    private float horizontalInput;
+    private float verticalInput;
     private float moveLimiter = 0.7f;
-
-    Vector2 input;
-    Vector2 moveSpeedModifier;
 
     void Start()
     {
-        if (body == null)
-        {
-            body = GetComponent<Rigidbody2D>();
-        }
-        if(robotAnimator == null)
-        {
-            robotAnimator = GetComponent<RobotAnimator>();
-        }
+        body = GetComponent<Rigidbody2D>();
 
     }
 
     void Update()
     {
-        // -1 x is left, -1 y is down
-        if (!Interacting)
-        {
-            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-
-            if (Input.GetButtonDown("Interact") && closestInteractable != null)
-            {
-                Interacting = true;
-                closestInteractable.Interact();
-                StartCoroutine(robotAnimator.PlayInteract());
-            }
-            robotAnimator.AnimateMovement(input);
-        }
+        // Gives a value between -1 and 1
+        horizontalInput = Input.GetAxisRaw("Horizontal"); // -1 is left
+        verticalInput = Input.GetAxisRaw("Vertical"); // -1 is down
     }
 
-    public void Deactivate()
-    {
-        robotAnimator.PlayBreak();
-        GetComponent<Collider2D>().enabled = false;
+    public void Deactivate() {
+        GetComponent<BoxCollider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
-        if (GetComponent<DisplayTimer>() != null)
-        {
-            Destroy(GetComponent<DisplayTimer>().overheadText);
-            Destroy(GetComponent<DisplayTimer>());
-        }
+        Destroy(GetComponent<DisplayTimer>().overheadText);
+        Destroy(GetComponent<DisplayTimer>());
         Destroy(this);
     }
     
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Interactable interactable = collision.GetComponent<Interactable>();
-
-        if (interactable != null)
+        if(collision.tag == "interactable")
         {
-            closestInteractable?.ShowUsable(false);
-            closestInteractable = collision.GetComponent<Interactable>();
-            closestInteractable.ShowUsable(true);
+            collision.GetComponent<Interactable>().Interact();
+        }
+
+        if(collision.tag == "robotSpawner")
+        {
+            collision.GetComponent<RobotSpawner>().TurnOn();
         }
 
         if (collision.tag == "collectable")
         {
             collision.GetComponent<Collectable>().PickUp();
         }
-
-        Walkway walkway = collision.GetComponent<Walkway>();
-        if (walkway != null && walkway.IsToggledOn)
-        {
-            moveSpeedModifier = walkway.WalkwayDirection * walkway.WalkwaySpeed;
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Interactable interactable = collision.GetComponent<Interactable>();
 
-        if(interactable != null && interactable == closestInteractable)
-        {
-            closestInteractable.ShowUsable(false);
-            closestInteractable = null;
-        }
+    }
 
-        Walkway walkway = collision.GetComponent<Walkway>();
-        if (walkway != null && walkway.IsToggledOn)
+    //spritedefault rotation should be looking right
+    private void Rotate()
+    {
+        Vector2 moveDirection = gameObject.GetComponent<Rigidbody2D>().velocity;
+        if (moveDirection != Vector2.zero)
         {
-            moveSpeedModifier = Vector2.zero;
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
 
-
     private void Move()
     {
-        // isometric babyyy
-        input.y *= isometricYMoveModifier;
+        if (horizontalInput != 0 && verticalInput != 0) // Check for diagonal movement
+        {
+            // limit movement speed diagonally, so you move at 70% speed
+            horizontalInput *= moveLimiter;
+            verticalInput *= moveLimiter;
+        }
 
-        body.velocity = new Vector2(input.x, input.y) * MovementSpeed + moveSpeedModifier;
+        body.velocity = new Vector2(horizontalInput, verticalInput) * MovementSpeed;
     }
     
 
     void FixedUpdate()
     {
-        if (GameManager.Instance.stateMachine == GameManager.StateMachine.InGame && !Interacting)
+        if (GameManager.Instance.stateMachine == GameManager.StateMachine.InGame)
         {
             Move();
-        }
-        else
-        {
-            body.velocity = Vector2.zero;
         }
     }
 }
