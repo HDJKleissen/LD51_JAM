@@ -22,6 +22,7 @@ public class RobotSpawner : Interactable
         if (IsActive)
         {
             TurnOn();
+            SpawnRobot(new List<Collectable>());
         }
     }
 

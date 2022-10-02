@@ -19,10 +19,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if(CurrentActiveRobot == null)
-        {
-            SpawnRobot();
-        }
+        
     }
 
     private void OnEnable()
@@ -56,10 +53,6 @@ public class Player : MonoBehaviour
         {
             if (rs.IsActive)
             {
-                if(CurrentActiveRobot == null)
-                {
-                    followRobotCamera.Follow = rs.transform;
-                }
                 rs.SpawnRobot(CollectedItems);
                 return;
             }
