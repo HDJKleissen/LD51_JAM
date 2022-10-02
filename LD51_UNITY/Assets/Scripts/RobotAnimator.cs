@@ -12,6 +12,8 @@ public class RobotAnimator : MonoBehaviour
     [SerializeField] AnimationClip WalkDown, WalkUp, Interact, Break;
     AnimationClip currentClip;
 
+    [SerializeField] LayerMask IsoCheckLayers;
+
     bool playingInteractingClip;
 
     bool isDead = false;

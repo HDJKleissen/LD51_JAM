@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3784978430256792707
 SpriteRenderer:
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotAnimator: {fileID: 3784978430256792709}
-  <MovementSpeed>k__BackingField: 5
+  <MovementSpeed>k__BackingField: 6
   isometricYMoveModifier: 0.55
   Interacting: 0
 --- !u!50 &3784978430256792711
@@ -167,6 +167,9 @@ MonoBehaviour:
   WalkUp: {fileID: 7400000, guid: 3ed72762e579527488a5105bd952277a, type: 2}
   Interact: {fileID: 7400000, guid: f85dcecd971128440ababd83234e2697, type: 2}
   Break: {fileID: 7400000, guid: 2140ccdfde6a73c44a5013f55ad0f5d7, type: 2}
+  IsoCheckLayers:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!58 &3784978430256792714
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -180,7 +183,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.165}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
 --- !u!114 &6345431349394967625
@@ -209,7 +212,7 @@ MonoBehaviour:
   - {x: 0.20661306, y: -0.1957469, z: 0}
   m_ShapePathHash: -1959382001
   m_Mesh: {fileID: 0}
-  m_InstanceId: -188220
+  m_InstanceId: 46554
 --- !u!114 &2544279152613079289
 MonoBehaviour:
   m_ObjectHideFlags: 0
