@@ -8,7 +8,13 @@ public class Door : Toggleable
     [SerializeField] Animator DoorAnimator;
     [SerializeField] Collider2D DoorCollider;
     [SerializeField] AnimationClip DoorOpenClip, DoorCloseClip;
-    [SerializeField] Sprite OpenDoorSprite;
+    [SerializeField] Sprite OpenDoorSprite, ClosedDoorSprite;
+
+    public void Start()
+    {
+        DoorAnimator.speed = 0;
+        DoorAnimator.enabled = false;
+    }
 
     private void Update()
     {
@@ -17,8 +23,16 @@ public class Door : Toggleable
 
     public override void HandleStateChange()
     {
+        DoorAnimator.enabled = true;
+        DoorAnimator.speed = 1;
         // Needs to be on ground "layer" when open
         DoorCollider.enabled = IsToggledOn;
         DoorAnimator.Play(IsToggledOn ? DoorCloseClip.GetClipName() : DoorOpenClip.GetClipName());
+    }
+
+    private void OnValidate()
+    {
+        spriteRenderer.sprite = IsToggledOn ? ClosedDoorSprite : OpenDoorSprite;
+        DoorCollider.enabled = IsToggledOn;
     }
 }

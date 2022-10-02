@@ -13,9 +13,7 @@ public class RobotController : MonoBehaviour
     public bool Interacting = false;
     Interactable closestInteractable;
 
-
-    private float moveLimiter = 0.7f;
-
+    
     Vector2 input;
     Vector2 moveSpeedModifier;
 
@@ -35,23 +33,21 @@ public class RobotController : MonoBehaviour
     void Update()
     {
         // -1 x is left, -1 y is down
-        if (!Interacting)
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+
+        if (Input.GetButtonDown("Interact") && closestInteractable != null)
         {
-            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-
-            if (Input.GetButtonDown("Interact") && closestInteractable != null)
+            Interacting = true;
+            closestInteractable.Interact();
+            if (!closestInteractable.CanInteract())
             {
-                Interacting = true;
-                closestInteractable.Interact();
-                if (!closestInteractable.CanInteract())
-                {
-                    SetInteractable(null);
-                }
-                StartCoroutine(robotAnimator.PlayInteract());
+                SetInteractable(null);
             }
-            robotAnimator.AnimateMovement(input);
+            StartCoroutine(robotAnimator.PlayInteract());
         }
+
+        robotAnimator.AnimateMovement(input);
     }
 
     public void Deactivate()
@@ -130,7 +126,7 @@ public class RobotController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameManager.Instance.stateMachine == GameManager.StateMachine.InGame && !Interacting)
+        if (GameManager.Instance.stateMachine == GameManager.StateMachine.InGame)
         {
             Move();
         }

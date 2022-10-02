@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class Player : MonoBehaviour
 {
-    Timer timer;
+    public Timer Timer;
     public RobotController CurrentActiveRobot;
     public CinemachineVirtualCamera followRobotCamera;
 
@@ -14,19 +14,27 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        timer = GetComponent<Timer>();
+        Timer = GetComponent<Timer>();
+    }
+
+    private void Start()
+    {
+        if(CurrentActiveRobot == null)
+        {
+            SpawnRobot();
+        }
     }
 
     private void OnEnable()
     {
-        timer.OnTimeOver += DeactivateRobot;
-        timer.OnTimeOver += SpawnRobot;
+        Timer.OnTimeOver += DeactivateRobot;
+        Timer.OnTimeOver += SpawnRobot;
     }
 
     private void OnDisable()
     {
-        timer.OnTimeOver -= DeactivateRobot;
-        timer.OnTimeOver -= SpawnRobot;
+        Timer.OnTimeOver -= DeactivateRobot;
+        Timer.OnTimeOver -= SpawnRobot;
     }
 
     // Update is called once per frame
@@ -44,11 +52,14 @@ public class Player : MonoBehaviour
 
     void SpawnRobot()
     {
-        Debug.Log("TRying to spawn robot..");
         foreach(RobotSpawner rs in GameManager.Instance.RobotSpawners)
         {
             if (rs.IsActive)
             {
+                if(CurrentActiveRobot == null)
+                {
+                    followRobotCamera.Follow = rs.transform;
+                }
                 rs.SpawnRobot(CollectedItems);
                 return;
             }

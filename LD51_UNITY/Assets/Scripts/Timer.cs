@@ -10,13 +10,19 @@ public class Timer : MonoBehaviour
     [field: SerializeField] public float TimeLeft { get; private set; }
 
     public event Action OnTimeOver;
+
+    bool TimeOverTriggered = false;
     // Start is called before the first frame update
     void Start()
     {
         RestartTimer();
     }
 
-    void RestartTimer() => TimeLeft = MaxTime;
+    public void RestartTimer()
+    {
+        TimeLeft = MaxTime;
+        TimeOverTriggered = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,12 +35,10 @@ public class Timer : MonoBehaviour
         {
             TimeLeft -= Time.deltaTime;
         }
-        else
+        else if(!TimeOverTriggered)
         {
+            TimeOverTriggered = true;
             OnTimeOver?.Invoke();
-            RestartTimer();
         }
-    }
-
-    
+    }    
 }

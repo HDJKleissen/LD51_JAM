@@ -65,6 +65,7 @@ public class RobotSpawner : Interactable
             GameObject robot = Instantiate(robotToSpawn, spawnLocation.position, Quaternion.identity, GameManager.Instance.World.transform);
             GameManager.Instance.Player.GetComponent<Player>().CurrentActiveRobot = robot.GetComponent<RobotController>();
             GameManager.Instance.Player.GetComponent<Player>().followRobotCamera.Follow = robot.transform;
+            GameManager.Instance.Player.GetComponent<Player>().Timer.RestartTimer();
             robot.AddComponent<FlickerSprite>().Setup(.2f, 1f);
             //apply item effects
             foreach (Collectable item in collectedItems)

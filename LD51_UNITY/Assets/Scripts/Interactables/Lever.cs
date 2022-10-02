@@ -24,6 +24,11 @@ public class Lever : Interactable
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
+
+        if(LinkedToggleables.Count == 0)
+        {
+            LinkedToggleables = new List<Toggleable>(GetComponentsInChildren<Toggleable>());
+        }
     }
 
     // Update is called once per frame
@@ -41,12 +46,16 @@ public class Lever : Interactable
     {
         foreach (Toggleable toggleable in LinkedToggleables)
         {
-            toggleable.SetState(Active);
+            toggleable.Toggle();
         }
     }
 
     private void OnValidate()
     {
         SetCorrectSprite();
+        if (LinkedToggleables.Count != GetComponentsInChildren<Toggleable>().Length)
+        {
+            LinkedToggleables = new List<Toggleable>(GetComponentsInChildren<Toggleable>());
+        }
     }
 }
