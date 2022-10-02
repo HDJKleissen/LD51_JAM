@@ -5207,11 +5207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7713294192706370092, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.73
+      value: 4.91
       objectReference: {fileID: 0}
     - target: {fileID: 7713294192706370092, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.64
+      value: -4.82
       objectReference: {fileID: 0}
     - target: {fileID: 7713294192706370092, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5249,6 +5249,18 @@ PrefabInstance:
       propertyPath: DoorOpenClip
       value: 
       objectReference: {fileID: 7400000, guid: c3edae7009984584f9fbede34cf57143, type: 2}
+    - target: {fileID: 7713294192706370095, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713294192706370095, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713294192706370095, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d63676c9dad6864ea07d7d078f3a4e5, type: 3}
