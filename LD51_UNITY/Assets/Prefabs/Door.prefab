@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7713294192706370093
 SpriteRenderer:
@@ -125,6 +125,7 @@ MonoBehaviour:
   DoorCollider: {fileID: 7713294192706370095}
   DoorOpenClip: {fileID: 7400000, guid: a26f1600c14db7246a50932e51d617d3, type: 2}
   DoorCloseClip: {fileID: 7400000, guid: 33b1e4d4344c1314392ab81766074803, type: 2}
+  OpenDoorSprite: {fileID: -467475133, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
 --- !u!60 &7713294192706370095
 PolygonCollider2D:
   m_ObjectHideFlags: 0
