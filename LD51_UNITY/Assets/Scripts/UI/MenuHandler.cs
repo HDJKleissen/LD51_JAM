@@ -8,8 +8,9 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] GameObject MainMenu;
     [SerializeField] GameObject OptionsScreen;
 
-    public void GoToScene(string scene) {
-        SceneManager.LoadScene(scene);
+    public void GoToScene(string scene)
+    {
+        SceneController.Instance.TransitionToScene("Level 1");
     }
 
     private void DisableAllMenuStates()
@@ -28,7 +29,9 @@ public class MenuHandler : MonoBehaviour
     public void ToOptionsScreen()
     {
         GameManager.Instance.stateMachine = GameManager.StateMachine.InMenu;
+        MainMenu.SetActive(false);
         OptionsScreen.SetActive(true);
+
     }
 
     public void Quit()
