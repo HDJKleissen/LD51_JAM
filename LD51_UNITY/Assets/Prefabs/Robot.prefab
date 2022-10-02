@@ -167,9 +167,7 @@ MonoBehaviour:
   WalkUp: {fileID: 7400000, guid: 3ed72762e579527488a5105bd952277a, type: 2}
   Interact: {fileID: 7400000, guid: f85dcecd971128440ababd83234e2697, type: 2}
   Break: {fileID: 7400000, guid: 2140ccdfde6a73c44a5013f55ad0f5d7, type: 2}
-  IsoCheckLayers:
-    serializedVersion: 2
-    m_Bits: 8
+  Spawn: {fileID: 7400000, guid: 82ec4869374c04348bc282c5499ed19a, type: 2}
 --- !u!58 &3784978430256792714
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -229,7 +227,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.405
-  m_Color: {r: 0.9563693, g: 0.9716981, b: 0.8387771, a: 1}
+  m_Color: {r: 0.4156863, g: 0.8588236, b: 0.7372549, a: 1}
   m_Intensity: 1.05
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0

@@ -35,7 +35,7 @@ public class RobotSpawner : Interactable
     public void TurnOff()
     {
         //animate
-        GetComponent<Renderer>().material.color = Color.white;
+        GetComponent<Renderer>().material.color = Color.gray;
         IsActive = false;
         //sfx
     }
@@ -43,7 +43,7 @@ public class RobotSpawner : Interactable
     public void TurnOn()
     {
         //animate
-        GetComponent<Renderer>().material.color = Color.red;
+        GetComponent<Renderer>().material.color = Color.white;
         //sfx
 
         //turn others off
@@ -67,7 +67,6 @@ public class RobotSpawner : Interactable
             GameManager.Instance.Player.GetComponent<Player>().CurrentActiveRobot = robot.GetComponent<RobotController>();
             GameManager.Instance.Player.GetComponent<Player>().followRobotCamera.Follow = robot.transform;
             GameManager.Instance.Player.GetComponent<Player>().Timer.RestartTimer();
-            robot.AddComponent<FlickerSprite>().Setup(.2f, 1f);
             //apply item effects
             foreach (Collectable item in collectedItems)
             {
