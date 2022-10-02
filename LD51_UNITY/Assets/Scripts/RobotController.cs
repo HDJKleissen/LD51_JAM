@@ -50,11 +50,16 @@ public class RobotController : MonoBehaviour
         }
     }
 
-    public void Deactivate() {
+    public void Deactivate()
+    {
+        robotAnimator.PlayBreak();
         GetComponent<Collider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
-        Destroy(GetComponent<DisplayTimer>().overheadText);
-        Destroy(GetComponent<DisplayTimer>());
+        if (GetComponent<DisplayTimer>() != null)
+        {
+            Destroy(GetComponent<DisplayTimer>().overheadText);
+            Destroy(GetComponent<DisplayTimer>());
+        }
         Destroy(this);
     }
     
@@ -112,12 +117,6 @@ public class RobotController : MonoBehaviour
 
     private void Move()
     {
-        if (input.x != 0 && input.y != 0) // Check for diagonal movement
-        {
-            // limit movement speed diagonally, so you move at 70% speed
-            //input *= moveLimiter;
-        }
-
         // isometric babyyy
         input.y *= isometricYMoveModifier;
 

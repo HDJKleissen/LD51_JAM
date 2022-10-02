@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class RobotAnimator : MonoBehaviour
     AnimationClip currentClip;
 
     bool playingInteractingClip;
+
+    bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +45,7 @@ public class RobotAnimator : MonoBehaviour
 
     public void AnimateMovement(Vector2 movement)
     {
-        if (!robot.Interacting)
+        if (!robot.Interacting && !isDead)
         {
             if (movement != Vector2.zero)
             {
@@ -76,19 +79,28 @@ public class RobotAnimator : MonoBehaviour
         }
     }
 
-
+    internal void PlayBreak()
+    {
+        animator.speed = 1;
+        animator.ForceStateNormalizedTime(0); // wacky hacky stuff
+        currentClip = Break;
+        isDead = true;
+    }
 
     public IEnumerator PlayInteract()
     {
-        playingInteractingClip = true;
-        currentClip = Interact;
-        animator.speed = 1;
-        animator.ForceStateNormalizedTime(0); // wacky hacky stuff
-        animator.Play(Interact.GetClipName());
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
-        robot.Interacting = false;
-        playingInteractingClip = false;
-        animator.ForceStateNormalizedTime(0); // wacky hacky stuff
+        if (!isDead)
+        {
+            playingInteractingClip = true;
+            currentClip = Interact;
+            animator.speed = 1;
+            animator.ForceStateNormalizedTime(0); // wacky hacky stuff
+            animator.Play(Interact.GetClipName());
+            yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
+            robot.Interacting = false;
+            playingInteractingClip = false;
+            animator.ForceStateNormalizedTime(0); // wacky hacky stuff
+        }
     }
 
 }

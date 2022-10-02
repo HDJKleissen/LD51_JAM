@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f969c3d49a21ac48a1086f712507c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxTime>k__BackingField: 10
+  <MaxTime>k__BackingField: 2
   <TimeLeft>k__BackingField: 0
 --- !u!114 &157016879
 MonoBehaviour:
