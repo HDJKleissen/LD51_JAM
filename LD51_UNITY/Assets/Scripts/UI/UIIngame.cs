@@ -12,6 +12,7 @@ public class UIIngame : MonoBehaviour
     Player player;
 
     [SerializeField] GameObject PauseScreen;
+    [SerializeField] GameObject VictoryScreen;
 
     // Update is called once per frame
     void Update()
@@ -77,5 +78,11 @@ public class UIIngame : MonoBehaviour
     public void GoToScene(string scene)
     {
         SceneManager.LoadScene(scene);
+    }
+
+    public void GoToVictoryScreen()
+    {
+        GameManager.Instance.stateMachine = GameManager.StateMachine.InMenu;
+        VictoryScreen.SetActive(true);
     }
 }

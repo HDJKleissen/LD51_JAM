@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance;
 
+    public int section = 0;
+
     public delegate void BeateEventDelegate(int beat);
     public delegate void MarkerEventDelegate(string markerName);
     public static event BeateEventDelegate BeatUpdated;
@@ -61,6 +63,12 @@ public class MusicManager : MonoBehaviour
         musicInstance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
 
 
+    }
+
+    public void SetMusicSection(int value)
+    {
+        musicInstance.setParameterByName("Section", value);
+        section = value;
     }
 
     private void OnDestroy()
