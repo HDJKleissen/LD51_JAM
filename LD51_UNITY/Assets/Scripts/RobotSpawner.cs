@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RobotSpawner : Interactable
+public class RobotSpawner : MonoBehaviour
 {
     [SerializeField] GameObject robotToSpawn;
     [SerializeField] Transform spawnLocation;
     [field: SerializeField] public bool IsActive { get; private set; }
-
-    public override bool CanInteract()
-    {
-        return !IsActive;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -60,25 +54,16 @@ public class RobotSpawner : Interactable
 
     public void SpawnRobot(List<Collectable> collectedItems)
     {
-        StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+        GameObject robot = Instantiate(robotToSpawn, spawnLocation.position, Quaternion.identity, GameManager.Instance.World.transform);
+        GameManager.Instance.Player.GetComponent<Player>().CurrentActiveRobot = robot.GetComponent<RobotController>();
+        GameManager.Instance.Player.GetComponent<Player>().followRobotCamera.Follow = robot.transform;
+
+        //apply item effects
+        foreach (Collectable item in collectedItems) 
         {
-            GameObject robot = Instantiate(robotToSpawn, spawnLocation.position, Quaternion.identity, GameManager.Instance.World.transform);
-            GameManager.Instance.Player.GetComponent<Player>().CurrentActiveRobot = robot.GetComponent<RobotController>();
-            GameManager.Instance.Player.GetComponent<Player>().followRobotCamera.Follow = robot.transform;
-            robot.AddComponent<FlickerSprite>().Setup(.2f, 1f);
-            //apply item effects
-            foreach (Collectable item in collectedItems)
-            {
-                item.Apply(robot.GetComponent<RobotController>());
-            }
-        }, 1f));
+            item.Apply(robot.GetComponent<RobotController>());
+        }
+
     }
 
-    public override void Interact()
-    {
-        if (!IsActive)
-        {
-            TurnOn();
-        }
-    }
 }

@@ -35,9 +35,9 @@ public class GameManager : Singleton<GameManager>
 
     public void InitGame()
     {
-        //mainMenu = GameObject.Find("MainMenuCanvas").transform.GetChild(0).gameObject;
-        Camera = Camera.main;
-        //stateMachine = StateMachine.InMenu;
+        mainMenu = GameObject.Find("MainMenuCanvas").transform.GetChild(0).gameObject;
+        Camera = GameObject.FindObjectOfType<Camera>();
+        stateMachine = StateMachine.InMenu;
     }
 
     void Update()

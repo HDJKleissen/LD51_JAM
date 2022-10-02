@@ -103,67 +103,19 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot_anim_3
+      name: robot_anim_0
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 0
         y: 800
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,15 +128,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_13
+      name: robot_anim_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 0
+        x: 400
+        y: 800
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,15 +149,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_8
+      name: robot_anim_2
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 400
+        x: 800
+        y: 800
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,15 +170,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_7
+      name: robot_anim_3
       rect:
         serializedVersion: 2
-        x: 800
-        y: 400
+        x: 1200
+        y: 800
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,15 +191,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_6
+      name: robot_anim_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 400
+        x: 1600
+        y: 800
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,15 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_1
+      name: robot_anim_5
       rect:
         serializedVersion: 2
-        x: 400
-        y: 800
+        x: 0
+        y: 400
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,15 +233,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_11
+      name: robot_anim_6
       rect:
         serializedVersion: 2
         x: 400
-        y: 0
+        y: 400
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,15 +254,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_10
+      name: robot_anim_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 800
+        y: 400
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,15 +275,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_0
+      name: robot_anim_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 800
+        x: 1200
+        y: 400
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -351,8 +303,8 @@ TextureImporter:
         y: 400
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -365,15 +317,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_4
+      name: robot_anim_10
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 800
+        x: 0
+        y: 0
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -386,15 +338,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_5
+      name: robot_anim_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 400
+        x: 400
+        y: 0
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -407,15 +359,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_2
+      name: robot_anim_12
       rect:
         serializedVersion: 2
         x: 800
-        y: 800
+        y: 0
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -428,15 +380,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_anim_12
+      name: robot_anim_13
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1200
         y: 0
         width: 400
         height: 400
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -459,20 +411,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot_anim_3: 995799125
-      robot_anim_13: -617164435
-      robot_anim_8: 995827370
-      robot_anim_7: -875097628
-      robot_anim_6: -690680669
-      robot_anim_1: -1198937177
-      robot_anim_11: 1766903807
-      robot_anim_10: 2020351034
-      robot_anim_0: -671892932
+      robot_anim_3: -875097628
+      robot_anim_13: -664657779
+      robot_anim_8: -671892932
+      robot_anim_7: 2020351034
+      robot_anim_6: 1766903807
+      robot_anim_1: -617164435
+      robot_anim_11: 838205304
+      robot_anim_10: -838040787
+      robot_anim_0: 995799125
       robot_anim_9: -194897164
-      robot_anim_4: -838040787
-      robot_anim_5: 838205304
-      robot_anim_2: -56957639
-      robot_anim_12: -664657779
+      robot_anim_4: -690680669
+      robot_anim_5: -1198937177
+      robot_anim_2: 995827370
+      robot_anim_12: -56957639
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
