@@ -9,7 +9,7 @@ public class Walkway : Toggleable
 
     public override void HandleStateChange()
     {
-
+        GetComponent<SpriteRenderer>().material.color = IsToggledOn ? Color.green : Color.red;
     }
 
     // Start is called before the first frame update

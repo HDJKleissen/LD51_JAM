@@ -44,6 +44,10 @@ public class RobotController : MonoBehaviour
             {
                 Interacting = true;
                 closestInteractable.Interact();
+                if (!closestInteractable.CanInteract())
+                {
+                    SetInteractable(null);
+                }
                 StartCoroutine(robotAnimator.PlayInteract());
             }
             robotAnimator.AnimateMovement(input);
@@ -66,15 +70,6 @@ public class RobotController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Interactable interactable = collision.GetComponent<Interactable>();
-
-        if (interactable != null)
-        {
-            closestInteractable?.ShowUsable(false);
-            closestInteractable = collision.GetComponent<Interactable>();
-            closestInteractable.ShowUsable(true);
-        }
-
         if (collision.tag == "collectable")
         {
             collision.GetComponent<Collectable>().PickUp();
@@ -89,6 +84,16 @@ public class RobotController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Interactable interactable = collision.GetComponent<Interactable>();
+
+        if (interactable != null)
+        {
+            if(closestInteractable == null || Vector2.Distance(transform.position, interactable.transform.position) < Vector2.Distance(transform.position, closestInteractable.transform.position))
+            {
+                SetInteractable(interactable);
+            }
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -97,8 +102,7 @@ public class RobotController : MonoBehaviour
 
         if(interactable != null && interactable == closestInteractable)
         {
-            closestInteractable.ShowUsable(false);
-            closestInteractable = null;
+            SetInteractable(null);
         }
 
         Walkway walkway = collision.GetComponent<Walkway>();
@@ -108,6 +112,12 @@ public class RobotController : MonoBehaviour
         }
     }
 
+    void SetInteractable(Interactable interactable)
+    {
+        closestInteractable?.ShowUsable(false);
+        closestInteractable = interactable;
+        closestInteractable?.ShowUsable(true);
+    }
 
     private void Move()
     {
