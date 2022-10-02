@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1695983119552478964}
   - component: {fileID: 1695983119552478962}
   - component: {fileID: 3071714129408936367}
+  - component: {fileID: 5269323795058546068}
   m_Layer: 0
   m_Name: Printer
   m_TagString: robotSpawner
@@ -64,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 4560535668021939088}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1695983119552478964
 SpriteRenderer:
@@ -173,6 +174,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884e0aee368b7a4428b857b3a948cdff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1695983119552478964}
   robotToSpawn: {fileID: 3784978430256792706, guid: 8a3aa32d95557ef4b9e231d512b50ee3, type: 3}
   spawnLocation: {fileID: 4560535668021939088}
   <IsActive>k__BackingField: 0
+--- !u!58 &5269323795058546068
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695983119552478967}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2

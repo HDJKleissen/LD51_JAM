@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RobotSpawner : MonoBehaviour
+public class RobotSpawner : Interactable
 {
     [SerializeField] GameObject robotToSpawn;
     [SerializeField] Transform spawnLocation;
     [field: SerializeField] public bool IsActive { get; private set; }
+
+    public override bool CanInteract()
+    {
+        return !IsActive;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,4 +74,11 @@ public class RobotSpawner : MonoBehaviour
         }, 1f));
     }
 
+    public override void Interact()
+    {
+        if (!IsActive)
+        {
+            TurnOn();
+        }
+    }
 }

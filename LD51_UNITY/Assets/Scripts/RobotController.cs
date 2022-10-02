@@ -75,12 +75,6 @@ public class RobotController : MonoBehaviour
             closestInteractable.ShowUsable(true);
         }
 
-
-        if(collision.tag == "robotSpawner")
-        {
-            collision.GetComponent<RobotSpawner>().TurnOn();
-        }
-
         if (collision.tag == "collectable")
         {
             collision.GetComponent<Collectable>().PickUp();
