@@ -8,7 +8,7 @@ using DG.Tweening;
 public class GameManager : Singleton<GameManager>
 {
 
-    GameObject mainMenu;
+    UIIngame mainMenu;
     [HideInInspector] public bool gameOver { get; private set; } = false;
 
     [field: SerializeField] public Camera Camera { get; private set; }
@@ -37,7 +37,7 @@ public class GameManager : Singleton<GameManager>
     {
         //mainMenu = GameObject.Find("MainMenuCanvas").transform.GetChild(0).gameObject;
         Camera = Camera.main;
-        //stateMachine = StateMachine.InMenu;
+        mainMenu = FindObjectOfType<UIIngame>();
     }
 
     void Update()
@@ -54,11 +54,7 @@ public class GameManager : Singleton<GameManager>
         if (gameOver)
             yield break;
 
-        stateMachine = StateMachine.InMenu;
-
-        yield return new WaitForSeconds(1.5f);
-        
-        //todo
+        mainMenu.GoToVictoryScreen();
     }
 
     protected override void Awake()
