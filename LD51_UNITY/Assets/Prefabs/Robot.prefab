@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotAnimator: {fileID: 3784978430256792709}
-  <MovementSpeed>k__BackingField: 4
-  isometricYMoveModifier: 0.6
+  <MovementSpeed>k__BackingField: 5
+  isometricYMoveModifier: 0.55
   Interacting: 0
 --- !u!50 &3784978430256792711
 Rigidbody2D:

@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7713294192706370093
 SpriteRenderer:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1852593239, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
+  m_Sprite: {fileID: -467475133, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 7713294192706370091}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94e534aa1a2f0ec4da30fcc1a1c2609c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1cb70787f530c704d8430fdc873faaf4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -123,9 +123,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7713294192706370093}
   DoorAnimator: {fileID: 7713294192706370090}
   DoorCollider: {fileID: 7713294192706370095}
-  DoorOpenClip: {fileID: 7400000, guid: a26f1600c14db7246a50932e51d617d3, type: 2}
+  DoorOpenClip: {fileID: 7400000, guid: c3edae7009984584f9fbede34cf57143, type: 2}
   DoorCloseClip: {fileID: 7400000, guid: 33b1e4d4344c1314392ab81766074803, type: 2}
   OpenDoorSprite: {fileID: -467475133, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
+  ClosedDoorSprite: {fileID: -1852593239, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
 --- !u!60 &7713294192706370095
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -139,11 +140,11 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: 0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 2.5620117}
+    pivot: {x: 0.525, y: 0.315}
+    oldSize: {x: 3, y: 2.5004883}
     newSize: {x: 1.5, y: 1.2810059}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -13,9 +13,7 @@ public class RobotController : MonoBehaviour
     public bool Interacting = false;
     Interactable closestInteractable;
 
-
-    private float moveLimiter = 0.7f;
-
+    
     Vector2 input;
     Vector2 moveSpeedModifier;
 
@@ -35,19 +33,21 @@ public class RobotController : MonoBehaviour
     void Update()
     {
         // -1 x is left, -1 y is down
-        if (!Interacting)
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+
+        if (Input.GetButtonDown("Interact") && closestInteractable != null)
         {
-            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-
-            if (Input.GetButtonDown("Interact") && closestInteractable != null)
+            Interacting = true;
+            closestInteractable.Interact();
+            if (!closestInteractable.CanInteract())
             {
-                Interacting = true;
-                closestInteractable.Interact();
-                StartCoroutine(robotAnimator.PlayInteract());
+                SetInteractable(null);
             }
-            robotAnimator.AnimateMovement(input);
+            StartCoroutine(robotAnimator.PlayInteract());
         }
+
+        robotAnimator.AnimateMovement(input);
     }
 
     public void Deactivate()
@@ -66,15 +66,6 @@ public class RobotController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Interactable interactable = collision.GetComponent<Interactable>();
-
-        if (interactable != null)
-        {
-            closestInteractable?.ShowUsable(false);
-            closestInteractable = collision.GetComponent<Interactable>();
-            closestInteractable.ShowUsable(true);
-        }
-
         if (collision.tag == "collectable")
         {
             collision.GetComponent<Collectable>().PickUp();
@@ -89,6 +80,16 @@ public class RobotController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Interactable interactable = collision.GetComponent<Interactable>();
+
+        if (interactable != null)
+        {
+            if(closestInteractable == null || Vector2.Distance(transform.position, interactable.transform.position) < Vector2.Distance(transform.position, closestInteractable.transform.position))
+            {
+                SetInteractable(interactable);
+            }
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -97,8 +98,7 @@ public class RobotController : MonoBehaviour
 
         if(interactable != null && interactable == closestInteractable)
         {
-            closestInteractable.ShowUsable(false);
-            closestInteractable = null;
+            SetInteractable(null);
         }
 
         Walkway walkway = collision.GetComponent<Walkway>();
@@ -108,6 +108,12 @@ public class RobotController : MonoBehaviour
         }
     }
 
+    void SetInteractable(Interactable interactable)
+    {
+        closestInteractable?.ShowUsable(false);
+        closestInteractable = interactable;
+        closestInteractable?.ShowUsable(true);
+    }
 
     private void Move()
     {
@@ -120,7 +126,7 @@ public class RobotController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameManager.Instance.stateMachine == GameManager.StateMachine.InGame && !Interacting)
+        if (GameManager.Instance.stateMachine == GameManager.StateMachine.InGame)
         {
             Move();
         }
