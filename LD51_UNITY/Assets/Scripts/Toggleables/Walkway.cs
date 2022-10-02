@@ -7,6 +7,8 @@ public class Walkway : Toggleable
     [SerializeField] WalkwayDirectionType WalkwayDir;
     public Vector2 WalkwayDirection { get; private set; }
     public float WalkwaySpeed;
+    [SerializeField] Sprite OnSprite, OffSprite;
+    List<SpriteRenderer> childRenderers;
 
     public Dictionary<WalkwayDirectionType, Vector2> directionVectors = new Dictionary<WalkwayDirectionType, Vector2>()
     {
@@ -18,13 +20,16 @@ public class Walkway : Toggleable
 
     public override void HandleStateChange()
     {
-        GetComponent<SpriteRenderer>().material.color = IsToggledOn ? Color.green : Color.red; // TODO; remove this when walkway has a proper sprite
+        foreach(SpriteRenderer renderer in childRenderers)
+        {
+            renderer.sprite = IsToggledOn ? OnSprite : OffSprite;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        childRenderers = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
     }
 
     // Update is called once per frame

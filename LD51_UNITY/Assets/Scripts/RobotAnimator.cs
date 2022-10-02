@@ -9,7 +9,7 @@ public class RobotAnimator : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    [SerializeField] AnimationClip WalkDown, WalkUp, Interact, Break;
+    [SerializeField] AnimationClip WalkDown, WalkUp, Interact, Break, Spawn;
     AnimationClip currentClip;
 
     bool playingInteractingClip;
@@ -31,7 +31,7 @@ public class RobotAnimator : MonoBehaviour
         {
             animator = GetComponent<Animator>();
         }
-        currentClip = WalkDown;
+        currentClip = Spawn;
     }
 
     // Update is called once per frame
@@ -45,34 +45,46 @@ public class RobotAnimator : MonoBehaviour
 
     public void AnimateMovement(Vector2 movement)
     {
-        if (!robot.Interacting && !isDead)
+        if (!robot.Interacting && !isDead)// && currentClip != Spawn)
         {
             if (movement != Vector2.zero)
             {
                 animator.speed = 1;
-                
+
                 if (movement.x < 0)
                 {
                     spriteRenderer.flipX = true;
-                    currentClip = WalkDown;
+                    if (currentClip == Spawn && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f || currentClip != Spawn)
+                    {
+                        currentClip = WalkDown;
+                    }
                 }
                 else if (movement.x > 0)
                 {
                     spriteRenderer.flipX = false;
-                    currentClip = WalkDown;
+                    if (currentClip == Spawn && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f || currentClip != Spawn)
+                    {
+                        currentClip = WalkDown;
+                    }
                 }
-                                
+
                 if (movement.y > 0)
                 {
-                    currentClip = WalkUp;
+                    if (currentClip == Spawn && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f || currentClip != Spawn)
+                    {
+                        currentClip = WalkUp;
+                    }
                 }
                 else if (movement.y < 0)
                 {
-                    currentClip = WalkDown;
+                    if (currentClip == Spawn && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f || currentClip != Spawn)
+                    {
+                        currentClip = WalkDown;
+                    }
                 }
 
             }
-            else
+            else if (currentClip != Spawn)
             {
                 animator.speed = 0;
             }
@@ -105,7 +117,6 @@ public class RobotAnimator : MonoBehaviour
             animator.ForceStateNormalizedTime(0); // wacky hacky stuff
         }
     }
-
 }
 
 
