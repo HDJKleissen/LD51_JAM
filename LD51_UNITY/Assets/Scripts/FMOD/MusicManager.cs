@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance;
 
+    public int section = 0;
+
     public delegate void BeateEventDelegate(int beat);
     public delegate void MarkerEventDelegate(string markerName);
     public static event BeateEventDelegate BeatUpdated;
@@ -63,6 +65,12 @@ public class MusicManager : MonoBehaviour
 
     }
 
+    public void SetMusicSection(int value)
+    {
+        musicInstance.setParameterByName("Section", value);
+        section = value;
+    }
+
     private void OnDestroy()
     {
         musicInstance.setUserData(IntPtr.Zero);
@@ -75,6 +83,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
+        SetMusicSection(section);
         if (lastBeat != timelineInfo.currentBeat)
         {
             lastBeat = timelineInfo.currentBeat;
