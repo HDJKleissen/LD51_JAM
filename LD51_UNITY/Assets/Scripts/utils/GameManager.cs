@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-
+        InfoBox.CreateYesPopUp("Hello Friend", "Press space to interact.. got it??", "beep boop", delegate { });
         InitGame();
     }
 

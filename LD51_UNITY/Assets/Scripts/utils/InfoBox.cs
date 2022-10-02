@@ -8,7 +8,7 @@ using System;
 
 public class InfoBox : MonoBehaviour
 {
-    public GameObject title, message, acceptButton, declineButton, character, currentSelection;
+    public GameObject title, message, acceptButton, declineButton;
 
     public InfoBox()
     {
@@ -17,19 +17,14 @@ public class InfoBox : MonoBehaviour
 
     public static void CreateYesPopUp(string title, string msg, string acceptButton, Action onYesClick)
     {
-        GameObject popup = Resources.Load<GameObject>("Prefabs/Popups/YesPopUp");
-        if(GameObject.Find("Canvas") == null)
-        {
-            GameObject c = Instantiate(Resources.Load<GameObject>("Prefabs/Canvas"));
-            c.name = "Canvas";
-        }
-        Transform canvas = GameObject.Find("Canvas").transform;
-        InfoBox infoBox = Instantiate(popup, canvas).GetComponent<InfoBox>();
+        GameObject popup = Resources.Load<GameObject>("Popups/YesPopUp");
+        InfoBox infoBox = Instantiate(popup).GetComponent<InfoBox>();
         Debug.Assert(infoBox != null, "Prefab file not found");
         infoBox.title.GetComponent<TMP_Text>().text = title;
         infoBox.message.GetComponent<TMP_Text>().text = msg;
         infoBox.acceptButton.GetComponentInChildren<TMP_Text>().text = acceptButton;
         
+        infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { Debug.Log("CLICKED"); });
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { Destroy(infoBox.gameObject); });
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { onYesClick(); });
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { GameManager.Instance.stateMachine = GameManager.StateMachine.InGame; });
@@ -39,14 +34,8 @@ public class InfoBox : MonoBehaviour
 
     public static void CreateYesNoPopUp(string title, string msg, string acceptText, string declineText, Action onYesClick, Action onNoClick)
     {
-        GameObject popup = Resources.Load<GameObject>("Prefabs/Popups/YesNoPopUp");
-        if (GameObject.Find("Canvas") == null)
-        {
-            GameObject c = Instantiate(Resources.Load<GameObject>("Prefabs/Canvas"));
-            c.name = "Canvas";
-        }
-        Transform canvas = GameObject.Find("Canvas").transform;
-        InfoBox infoBox = Instantiate(popup, canvas).GetComponent<InfoBox>();
+        GameObject popup = Resources.Load<GameObject>("Popups/YesNoPopUp");
+        InfoBox infoBox = Instantiate(popup).GetComponent<InfoBox>();
         infoBox.title.GetComponent<TMP_Text>().text = title;
         infoBox.message.GetComponent<TMP_Text>().text = msg;
         infoBox.acceptButton.GetComponentInChildren<TMP_Text>().text = acceptText;
