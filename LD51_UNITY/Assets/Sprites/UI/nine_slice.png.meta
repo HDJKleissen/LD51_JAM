@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f25e9471f01c61f4c81b245cd68c8f5c
+guid: 3e75e0844e2116549ac9a1ac67bfe4ad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 55, y: 50, z: 55, w: 88}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -107,232 +107,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ship_control_0
+      name: nine_slice_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3200
-        width: 1600
-        height: 1600
+        y: 266.6667
+        width: 133.33333
+        height: 133.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60901848114c19740928f1f6af8625dd
-      internalID: 1071145373
+      spriteID: 68427273e778dad4391ffc105ab4f956
+      internalID: -1983815390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship_control_1
+      name: nine_slice_1
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 133
+        y: 266.6667
+        width: 133.33333
+        height: 133.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be13a0685f8f3ab49ae2050a8aa98417
-      internalID: -1295760105
+      spriteID: b3184bc4eacb0d64698238c76a8fb398
+      internalID: 683183913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship_control_2
+      name: nine_slice_2
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 266
+        y: 266.6667
+        width: 133.33333
+        height: 133.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ad70fc4e8c7244aae29e8ee27321cc
-      internalID: -1336263071
+      spriteID: 7818f127cdfe49e47a3e75b7d8a2cab2
+      internalID: 659776833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship_control_3
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 3200
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f833529525dc41c4c902f1b749ffba82
-      internalID: -2096301479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ship_control_4
-      rect:
-        serializedVersion: 2
-        x: 6400
-        y: 3200
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e23af9a06361489458fe66f17d3712fe
-      internalID: 630755446
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ship_control_5
+      name: nine_slice_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1600
-        width: 1600
-        height: 1600
+        y: 133.66667
+        width: 133.33333
+        height: 133.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242ed8cc5bb609942af26d83deba6298
-      internalID: -1663566752
+      spriteID: c68945c9b77795840acc3fa4d38e2020
+      internalID: -1564742526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship_control_6
+      name: nine_slice_4
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1600
-        width: 1600
-        height: 1600
+        x: 266
+        y: 133.66667
+        width: 133.33333
+        height: 133.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3c355dfac6229d4887bfe1afe080f68
-      internalID: 1609892490
+      spriteID: 3dc7761ca2d0e0d47abdd5424ab1efef
+      internalID: -1373766302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ship_control_7
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 1600
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09527be353e2f7c409b443f1361f2139
-      internalID: 1963065758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ship_control_8
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 1600
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9459c7007603c97478c72f6201a5e827
-      internalID: 355706713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ship_control_9
-      rect:
-        serializedVersion: 2
-        x: 6400
-        y: 1600
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f356a23234d3e84ea388d403f9fdc59
-      internalID: -707535110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ship_control_10
+      name: nine_slice_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1600
-        height: 1600
+        y: 0.66667175
+        width: 133.33333
+        height: 133.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2b396edc8c512b4bb234eab6999602a
-      internalID: 150849838
+      spriteID: 319e0efb7654fc645b8d510b484710bc
+      internalID: 442625829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nine_slice_6
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0.66667175
+        width: 133.33333
+        height: 133.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a358decbd9f4b2498db75e31bcdbeb3
+      internalID: 2010183438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nine_slice_7
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0.66667175
+        width: 133.33333
+        height: 133.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf9ec8cf528aeb44b2205743c0b65af
+      internalID: 1084856094
       vertices: []
       indices: 
       edges: []
@@ -341,24 +278,21 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ship_control_8: 355706713
-      ship_control_5: -1663566752
-      ship_control_4: 630755446
-      ship_control_2: -1336263071
-      ship_control_10: 150849838
-      ship_control_3: -2096301479
-      ship_control_0: 1071145373
-      ship_control_7: 1963065758
-      ship_control_9: -707535110
-      ship_control_6: 1609892490
-      ship_control_1: -1295760105
+      nine_slice_4: -1373766302
+      nine_slice_7: 1084856094
+      nine_slice_2: 659776833
+      nine_slice_3: -1564742526
+      nine_slice_6: 2010183438
+      nine_slice_5: 442625829
+      nine_slice_0: -1983815390
+      nine_slice_1: 683183913
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
