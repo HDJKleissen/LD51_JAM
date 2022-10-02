@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     void DeactivateRobot()
     {
-        if(CurrentActiveRobot != null)
-            CurrentActiveRobot.Deactivate();
+        //if(CurrentActiveRobot != null)
+        //    CurrentActiveRobot.Deactivate();
     }
 }
