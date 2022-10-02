@@ -81,6 +81,9 @@ public class RobotAnimator : MonoBehaviour
 
     internal void PlayBreak()
     {
+        robot.Interacting = false;
+        playingInteractingClip = false;
+        StopAllCoroutines();
         animator.speed = 1;
         animator.ForceStateNormalizedTime(0); // wacky hacky stuff
         currentClip = Break;
