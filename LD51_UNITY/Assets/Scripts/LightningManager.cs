@@ -2,36 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using DG.Tweening;
 
 public class LightningManager : MonoBehaviour
 {
     [SerializeField] GameObject localLightsContainer;
     List<Light2D> allSpotLights = new List<Light2D>();
+    [SerializeField] List<Color> LightColors = new List<Color>();
+
+
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Transform t in localLightsContainer.transform){
+        //get all the lights in scene attached to container
+        foreach (Transform t in localLightsContainer.transform) {
             allSpotLights.Add(t.GetComponent<Light2D>());
         }
     }
 
-    public void BlinkLight(float duration)
-    {
-        
-    }
-
     private void FlipSomeLightSwitches(int beatNumber)
     {
-        foreach(Light2D l in allSpotLights)
+        if (beatNumber == 1)
         {
-            TurnOn(l);
+            foreach (Light2D l in allSpotLights)
+            {
+                TurnOn(l);
+            }
+
+            TurnOff(GetRandomSpotLight);
         }
 
-        TurnOff(GetRandomSpotLight);
+        if(beatNumber == 2 || beatNumber == 4 )
+        {
+            ChangeLightColor(GetRandomSpotLight);
+        }
     }
 
     private Light2D GetRandomSpotLight => allSpotLights[Random.Range(0, allSpotLights.Count)];
+    private Color GetRandomLightColor => LightColors[Random.Range(0, LightColors.Count)];
 
+    private void ChangeLightColor(Light2D light)
+    {
+        DOTween.To(() => light.color, x => light.color = x, GetRandomLightColor, 0.2f);
+    }
 
     private void TurnOn(Light2D light)
     {
@@ -53,11 +66,4 @@ public class LightningManager : MonoBehaviour
         MusicManager.BeatUpdated -= FlipSomeLightSwitches;
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
