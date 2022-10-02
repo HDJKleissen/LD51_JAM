@@ -111,7 +111,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1000
+        y: 0
         width: 1200
         height: 1000
       alignment: 0
@@ -131,7 +131,7 @@ TextureImporter:
       name: bridge_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1200
         y: 0
         width: 1200
         height: 1000
@@ -148,6 +148,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bridge_2
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 1200
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f15dec017144064bb2b44768c1a8942
+      internalID: -1893013059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -159,6 +180,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      bridge_2: -1893013059
       bridge_1: 1755950662
       bridge_0: 994799954
   spritePackingTag: 
