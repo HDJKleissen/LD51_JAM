@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3784978430256792707
 SpriteRenderer:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8aab88af12142346a3db0242fec1911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotAnimator: {fileID: 0}
+  robotAnimator: {fileID: 3784978430256792709}
   <MovementSpeed>k__BackingField: 4
   isometricYMoveModifier: 0.6
   Interacting: 0
@@ -161,8 +161,8 @@ MonoBehaviour:
   robot: {fileID: 3784978430256792710}
   animator: {fileID: 3784978430256792705}
   spriteRenderer: {fileID: 3784978430256792707}
-  WalkDown: {fileID: 7400000, guid: 336727482c8473749b958a921cdcac4e, type: 2}
-  WalkUp: {fileID: 7400000, guid: 8110904c0f4a4b74ab41e26c37c477ea, type: 2}
+  WalkDown: {fileID: 7400000, guid: 1d48c421517ee0f40a37dec4836e79f6, type: 2}
+  WalkUp: {fileID: 7400000, guid: 3ed72762e579527488a5105bd952277a, type: 2}
   Interact: {fileID: 7400000, guid: f85dcecd971128440ababd83234e2697, type: 2}
   Break: {fileID: 7400000, guid: 2140ccdfde6a73c44a5013f55ad0f5d7, type: 2}
 --- !u!58 &3784978430256792714
