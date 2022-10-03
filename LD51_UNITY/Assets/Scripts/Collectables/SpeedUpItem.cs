@@ -13,6 +13,7 @@ public class SpeedUpItem : Collectable
         FMODUnity.RuntimeManager.PlayOneShot("event:/SpeedPickup");
         GameManager.Instance.Player.AddCollectedItem(this);
         Destroy(this.gameObject);
+        Apply(GameManager.Instance.Player.CurrentActiveRobot);
     }
 
     public override void Apply(RobotController robot)

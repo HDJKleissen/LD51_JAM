@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShipConsole : Interactable
 {
+    public UnityEvent OnAnimationFinish;
     [SerializeField] Animator animator;
 
     [SerializeField] AnimationClip ErrorClip, RestartClip, ActiveClip;
@@ -22,7 +24,7 @@ public class ShipConsole : Interactable
             CoroutineHelper.WaitForSeconds(2f),
             CoroutineHelper.Do(() => animator.Play(ActiveClip.GetClipName())),
             CoroutineHelper.Do(() => Debug.Log("replace this debug log with victory music")),
-            CoroutineHelper.DelaySeconds(() => /*end game*/Debug.Log("GAME OVER"), /*console sound length*/3f)
+            CoroutineHelper.DelaySeconds(() => OnAnimationFinish.Invoke(), /*console sound length*/3f)
         ));
 
     }
