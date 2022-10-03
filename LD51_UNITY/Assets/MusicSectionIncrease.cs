@@ -8,10 +8,10 @@ public class MusicSectionIncrease : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            MusicManager.instance.section++;
+            MusicManager.instance.SetMusicSection(MusicManager.instance.section+1);
             if (MusicManager.instance.section > 4)
             {
-                MusicManager.instance.section = 4;
+                MusicManager.instance.SetMusicSection(4);
             }
             Destroy(gameObject);
         }
