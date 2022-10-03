@@ -24,6 +24,12 @@ public class CutsceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Take this out if we get video working on webgl
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            //OnVideoFinished.Invoke();
+        }
+        player.source = VideoSource.Url;
         player.url = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
         player.Play();
     }

@@ -545,7 +545,7 @@ MonoBehaviour:
           m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
-  videoFileName: StoryCutscene
+  videoFileName: StoryCutscene.mp4
   player: {fileID: 1388467696}
 --- !u!114 &1175013725
 MonoBehaviour:
