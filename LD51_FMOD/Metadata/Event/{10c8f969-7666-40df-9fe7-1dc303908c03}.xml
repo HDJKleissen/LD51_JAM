@@ -5,7 +5,7 @@
 			<value>PlayerMovement</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e97c3ea4-03ed-49ae-b48a-2385f91c2db5}</destination>
@@ -112,6 +112,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{4f61c63e-f86e-46ec-99a0-b64664a92989}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
 		<relationship name="automators">
 			<destination>{cf415011-fb6a-43fd-894f-d84f084ac916}</destination>
 		</relationship>
@@ -119,6 +122,7 @@
 			<destination>{804df645-8080-4b2a-a835-3911d95926f2}</destination>
 			<destination>{9b3a2d14-1a20-46f9-bb95-55cc70c318b4}</destination>
 			<destination>{62dc1813-767e-4860-94ec-c8562dd0fdad}</destination>
+			<destination>{e55ff054-418e-43ea-b8a4-bfa04a567a22}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{793e5178-8df2-463d-a5b6-aee2d8336b6e}</destination>
@@ -163,7 +167,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{3ad87dcb-5d8c-4d45-a173-6ee72737781e}">
 		<property name="volume">
-			<value>-28</value>
+			<value>-21.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -214,7 +218,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{00d390cf-3651-4089-b73c-35bee4162541}">
 		<property name="volume">
-			<value>-4.5</value>
+			<value>-7.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 3</value>
@@ -251,7 +255,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{472f33ff-b9b4-4826-b6a9-ef04946448f8}">
 		<property name="volume">
-			<value>-13.5</value>
+			<value>-8</value>
 		</property>
 		<property name="name">
 			<value>Audio 4</value>
@@ -324,12 +328,30 @@
 			<value>2</value>
 		</property>
 	</object>
+	<object class="LFOModulator" id="{e55ff054-418e-43ea-b8a4-bfa04a567a22}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="rate">
+			<value>3.4000001</value>
+		</property>
+		<property name="depth">
+			<value>4.5</value>
+		</property>
+		<property name="direction">
+			<value>-100</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{793e5178-8df2-463d-a5b6-aee2d8336b6e}">
 		<relationship name="effects">
 			<destination>{e4103f6d-e1ab-471b-a148-68db8284efe3}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{c4d78cb8-b931-4c91-9fda-ca9bc1de8c46}" />
+	<object class="MixerBusPanner" id="{c4d78cb8-b931-4c91-9fda-ca9bc1de8c46}">
+		<property name="overridingOutputFormat">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{6f387008-2278-4be2-acb1-ded492e77d6f}" />
 	<object class="ADSRModulator" id="{b1736a6d-ffe5-45af-b5c7-d3e21c033a5f}">
 		<property name="nameOfPropertyBeingModulated">
@@ -431,7 +453,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>6</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{96ced2bb-b517-4908-be3a-5deccd51b15a}">
