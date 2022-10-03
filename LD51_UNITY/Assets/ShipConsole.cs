@@ -20,6 +20,7 @@ public class ShipConsole : Interactable
         spriteRenderer.material.color = Color.white;
         animator.Play(RestartClip.GetClipName());
         // SFX: Oneshot restart
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Reboot");
         StartCoroutine(CoroutineHelper.Chain(
             CoroutineHelper.WaitForSeconds(2f),
             CoroutineHelper.Do(() => animator.Play(ActiveClip.GetClipName())),

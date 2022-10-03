@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public List<Collectable> CollectedItems;
 
+    // Put this 2 seconds before player death: FMODUnity.RuntimeManager.PlayOneShot("event:/NearDeath");
+
     // Start is called before the first frame update
     void Awake()
     {
