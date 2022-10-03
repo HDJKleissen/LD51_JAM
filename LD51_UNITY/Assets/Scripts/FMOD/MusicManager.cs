@@ -51,7 +51,8 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        Debug.Log("DDOL!");
+        DontDestroyOnLoad(transform.root.gameObject);
         timelineInfo = new TimelineInfo();
         beatCallback = new FMOD.Studio.EVENT_CALLBACK(BeatEventCallBack);
 

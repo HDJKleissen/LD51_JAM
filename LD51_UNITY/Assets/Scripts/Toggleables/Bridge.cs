@@ -7,15 +7,17 @@ public class Bridge : Toggleable
     [SerializeField] List<BridgeSegment> bridgeSegmentsInOrder;
     public override void HandleStateChange()
     {
-        // if same sound remove if and else lol
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Bridge", gameObject);
+       /* // if same sound remove if and else lol
         if (IsToggledOn)
         {
             // SFX: Oneshot bridge opening
+
         }
         else
         {
             // SFX: Oneshot bridge closing
-        }
+        }*/
         StartCoroutine(SetBridgeState(!IsToggledOn));
     }
 
