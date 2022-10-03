@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{337a684e-bfe6-406e-b443-216c55eafa77}">
+		<property name="assetPath">
+			<value>Servo loop.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3181262e-aec2-4dab-b814-aa9ea67454ab}</destination>
+		</relationship>
+	</object>
+</objects>
