@@ -51,6 +51,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         timelineInfo = new TimelineInfo();
         beatCallback = new FMOD.Studio.EVENT_CALLBACK(BeatEventCallBack);
 
@@ -61,7 +62,6 @@ public class MusicManager : MonoBehaviour
         musicInstance.setUserData(GCHandle.ToIntPtr(timelineHandle));
 
         musicInstance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
-
 
     }
 

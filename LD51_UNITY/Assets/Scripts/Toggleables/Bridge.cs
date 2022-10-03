@@ -30,6 +30,10 @@ public class Bridge : Toggleable
     {
 
     }
+    private void OnValidate()
+    {
+            
+    }
 
     IEnumerator SetBridgeState(bool open)
     {

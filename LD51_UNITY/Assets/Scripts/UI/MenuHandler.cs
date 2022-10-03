@@ -10,7 +10,7 @@ public class MenuHandler : MonoBehaviour
 
     public void GoToScene(string scene)
     {
-        SceneController.Instance.TransitionToScene("Level 1");
+        SceneController.Instance.TransitionToScene(scene);
     }
 
     private void DisableAllMenuStates()
