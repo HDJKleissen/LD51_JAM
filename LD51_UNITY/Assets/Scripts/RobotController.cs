@@ -49,7 +49,6 @@ public class RobotController : MonoBehaviour
         {
             // SFX: Start playing movement sound
             movementSound.start();
-            movementSound.release();
         }
         else if (prevInput != Vector2.zero && input == Vector2.zero)
         {
@@ -91,6 +90,7 @@ public class RobotController : MonoBehaviour
     {
         SpeedUpSound(0);
         movementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        movementSound.release();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
