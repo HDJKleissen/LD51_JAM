@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{72525aa4-f23d-4359-9195-18baf92f3881}">
+	<object class="AudioFile" id="{0f87e42c-ce29-426d-8a05-a6d75b856ef6}">
 		<property name="assetPath">
-			<value>Servo start click.ogg</value>
+			<value>PrintRobot.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.1875</value>
+			<value>2</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3181262e-aec2-4dab-b814-aa9ea67454ab}</destination>

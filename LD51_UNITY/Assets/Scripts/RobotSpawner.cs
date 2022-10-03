@@ -61,6 +61,7 @@ public class RobotSpawner : Interactable
     {
         animator.Play("printer_print", 0, 0);
         // SFX: Oneshot robot creation
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/PrintRobot", gameObject);
         StartCoroutine(CoroutineHelper.DelaySeconds(() =>
         {
             GameObject robot = Instantiate(robotToSpawn, spawnLocation.position, Quaternion.identity, GameManager.Instance.World.transform);
