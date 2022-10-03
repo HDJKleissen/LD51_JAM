@@ -31,6 +31,8 @@ public class Door : Toggleable
         // Needs to be on ground "layer" when open
         DoorCollider.enabled = IsToggledOn;
         DoorAnimator.Play(IsToggledOn ? DoorCloseClip.GetClipName() : DoorOpenClip.GetClipName());
+
+        // SFX: Oneshot Door open, IsToggledOn = true = door is closing
     }
 
     private void OnValidate()

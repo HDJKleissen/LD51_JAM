@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RobotSpawner : Interactable
 {
+    [SerializeField] Animator animator;
+
     [SerializeField] GameObject robotToSpawn;
     [SerializeField] Transform spawnLocation;
     [field: SerializeField] public bool IsActive { get; private set; }
@@ -34,17 +36,13 @@ public class RobotSpawner : Interactable
     
     public void TurnOff()
     {
-        //animate
         GetComponent<Renderer>().material.color = Color.gray;
         IsActive = false;
-        //sfx
     }
 
     public void TurnOn()
     {
-        //animate
         GetComponent<Renderer>().material.color = Color.white;
-        //sfx
 
         //turn others off
         foreach (RobotSpawner rs in GameManager.Instance.RobotSpawners)
@@ -61,6 +59,8 @@ public class RobotSpawner : Interactable
 
     public void SpawnRobot(List<Collectable> collectedItems)
     {
+        animator.Play("printer_print", 0, 0);
+        // SFX: Oneshot robot creation
         StartCoroutine(CoroutineHelper.DelaySeconds(() =>
         {
             GameObject robot = Instantiate(robotToSpawn, spawnLocation.position, Quaternion.identity, GameManager.Instance.World.transform);

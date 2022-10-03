@@ -15,6 +15,7 @@ public class Lever : Interactable
         Active = !Active;
         SetCorrectSprite();
         HandleToggleables();
+        // SFX: Oneshot lever sound can use Active bool for on/off diff
     }
 
     // Start is called before the first frame update
