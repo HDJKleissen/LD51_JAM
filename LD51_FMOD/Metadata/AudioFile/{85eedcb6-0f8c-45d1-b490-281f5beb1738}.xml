@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{4e039643-9cef-4f29-b80d-6cede81fc4db}">
-		<property name="assetPath" />
+	<object class="AudioFile" id="{85eedcb6-0f8c-45d1-b490-281f5beb1738}">
+		<property name="assetPath">
+			<value>VictoryCutScene.wav</value>
+		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="length">
-			<value>5.005283446712018</value>
+			<value>6</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3181262e-aec2-4dab-b814-aa9ea67454ab}</destination>
