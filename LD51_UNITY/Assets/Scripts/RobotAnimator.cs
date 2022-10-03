@@ -88,6 +88,7 @@ public class RobotAnimator : MonoBehaviour
         animator.ForceStateNormalizedTime(0); // wacky hacky stuff
         currentClip = Break;
         isDead = true;
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/PlayerDeath", gameObject);
     }
 
     public IEnumerator PlayInteract()
