@@ -18,6 +18,7 @@ public class RobotController : MonoBehaviour
     Vector2 moveSpeedModifier;
 
     private FMOD.Studio.EventInstance movementSound;
+    internal float BaseSpeed;
 
     void Start()
     {
@@ -34,6 +35,11 @@ public class RobotController : MonoBehaviour
 
     void Update()
     {
+        if(BaseSpeed != MovementSpeed)
+        {
+            BaseSpeed = MovementSpeed;
+            SpeedUpSound(1);
+        }
         // -1 x is left, -1 y is down
         Vector2 prevInput = input;
 
@@ -83,6 +89,7 @@ public class RobotController : MonoBehaviour
 
     private void OnDestroy()
     {
+        SpeedUpSound(0);
         movementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -160,6 +167,7 @@ public class RobotController : MonoBehaviour
 
     public void SpeedUpSound(int value)
     {
+        Debug.Log("setting speed");
         movementSound.setParameterByName("SpeedUp", value, false);
     }
 }

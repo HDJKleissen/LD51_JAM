@@ -65,10 +65,11 @@ public class RobotSpawner : Interactable
         StartCoroutine(CoroutineHelper.DelaySeconds(() =>
         {
             GameObject robot = Instantiate(robotToSpawn, spawnLocation.position, Quaternion.identity, GameManager.Instance.World.transform);
-            GameManager.Instance.Player.GetComponent<Player>().CurrentActiveRobot = robot.GetComponent<RobotController>();
-            GameManager.Instance.Player.GetComponent<Player>().followRobotCamera.Follow = robot.transform;
-            GameManager.Instance.Player.GetComponent<Player>().Timer.RestartTimer();
-            GameManager.Instance.Player.GetComponent<Player>().PlayedNearDeathSound = false;
+            robot.GetComponent<RobotController>().BaseSpeed = robot.GetComponent<RobotController>().MovementSpeed;
+            GameManager.Instance.Player.CurrentActiveRobot = robot.GetComponent<RobotController>();
+            GameManager.Instance.Player.followRobotCamera.Follow = robot.transform;
+            GameManager.Instance.Player.Timer.RestartTimer();
+            GameManager.Instance.Player.PlayedNearDeathSound = false;
             //apply item effects
             foreach (Collectable item in collectedItems)
             {
