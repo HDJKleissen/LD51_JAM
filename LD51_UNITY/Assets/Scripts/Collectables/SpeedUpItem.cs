@@ -19,5 +19,6 @@ public class SpeedUpItem : Collectable
     public override void Apply(RobotController robot)
     {
         robot.MovementSpeed += speedIncrease;
+        robot.SpeedUpSound(1);
     }
 }
