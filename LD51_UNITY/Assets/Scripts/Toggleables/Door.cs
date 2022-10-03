@@ -33,6 +33,7 @@ public class Door : Toggleable
         DoorAnimator.Play(IsToggledOn ? DoorCloseClip.GetClipName() : DoorOpenClip.GetClipName());
 
         // SFX: Oneshot Door open, IsToggledOn = true = door is closing
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Door", gameObject);
     }
 
     private void OnValidate()

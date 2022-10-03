@@ -408,10 +408,10 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>5</value>
+			<value>0.150000006</value>
 		</property>
 		<property name="minimumExtent">
-			<value>126</value>
+			<value>180</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{3bdc9256-63c3-4503-8c92-7fa58d3fb748}" />
