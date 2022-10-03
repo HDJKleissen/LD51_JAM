@@ -30,9 +30,6 @@ public class RobotController : MonoBehaviour
             robotAnimator = GetComponent<RobotAnimator>();
         }
         movementSound = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerMovement");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(movementSound, transform, GetComponent<Rigidbody2D>());
-
-
     }
 
     void Update()
@@ -72,6 +69,7 @@ public class RobotController : MonoBehaviour
     public void Deactivate()
     {
         // SFX: Oneshot Death sound
+        movementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         robotAnimator.PlayBreak();
         GetComponent<Collider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
@@ -154,5 +152,10 @@ public class RobotController : MonoBehaviour
         {
             body.velocity = Vector2.zero;
         }
+    }
+
+    public void SpeedUpSound(int value)
+    {
+        movementSound.setParameterByName("SpeedUp", value, false);
     }
 }
