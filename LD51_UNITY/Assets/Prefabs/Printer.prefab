@@ -67,7 +67,7 @@ Transform:
   m_Children:
   - {fileID: 4560535668021939088}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1695983119552478964
 SpriteRenderer:
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: af5100ea4c100c74ea14895ae754b03a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,8 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1695983119552478964}
   animator: {fileID: 869104254}
-  ActiveSprite: {fileID: -79028174, guid: f241b2b16539f5e4abf712bd49bf7224, type: 3}
-  InActiveSprite: {fileID: 148959552, guid: f241b2b16539f5e4abf712bd49bf7224, type: 3}
   robotToSpawn: {fileID: 3784978430256792706, guid: 8a3aa32d95557ef4b9e231d512b50ee3, type: 3}
   spawnLocation: {fileID: 4560535668021939088}
   <IsActive>k__BackingField: 0
@@ -233,7 +231,7 @@ MonoBehaviour:
   - {x: -0.8562179, y: -0.52627397, z: 0}
   m_ShapePathHash: -286671609
   m_Mesh: {fileID: 0}
-  m_InstanceId: -680220
+  m_InstanceId: 67744
 --- !u!95 &869104254
 Animator:
   serializedVersion: 4
