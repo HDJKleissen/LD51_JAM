@@ -23,13 +23,25 @@ public class InfoBox : MonoBehaviour
         infoBox.title.GetComponent<TMP_Text>().text = title;
         infoBox.message.GetComponent<TMP_Text>().text = msg;
         infoBox.acceptButton.GetComponentInChildren<TMP_Text>().text = acceptButton;
-        
+
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { Debug.Log("CLICKED"); });
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { Destroy(infoBox.gameObject); });
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { onYesClick(); });
         infoBox.acceptButton.GetComponent<Button>().onClick.AddListener(delegate { GameManager.Instance.stateMachine = GameManager.StateMachine.InGame; });
 
         GameManager.Instance.stateMachine = GameManager.StateMachine.PopUp;
+    }
+
+    public static GameObject CreateTemporaryPopUp(string title, string msg)
+    {
+        GameObject popup = Resources.Load<GameObject>("Popups/YesPopUp");
+        InfoBox infoBox = Instantiate(popup).GetComponent<InfoBox>();
+        Debug.Assert(infoBox != null, "Prefab file not found");
+        infoBox.title.GetComponent<TMP_Text>().text = title;
+        infoBox.message.GetComponent<TMP_Text>().text = msg;
+        infoBox.acceptButton.SetActive(false);
+
+        return infoBox.gameObject;
     }
 
     public static void CreateYesNoPopUp(string title, string msg, string acceptText, string declineText, Action onYesClick, Action onNoClick)

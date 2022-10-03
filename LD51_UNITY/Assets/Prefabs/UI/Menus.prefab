@@ -1849,7 +1849,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 863307557186260900}
   OptionsScreen: {fileID: 863307558078267245}
-  PauseScreen: {fileID: 863307556841483392}
 --- !u!1 &863307557583985145
 GameObject:
   m_ObjectHideFlags: 0
