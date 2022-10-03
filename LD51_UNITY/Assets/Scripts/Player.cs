@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
     public CinemachineVirtualCamera followRobotCamera;
 
     public List<Collectable> CollectedItems;
-
-    // Put this 2 seconds before player death: FMODUnity.RuntimeManager.PlayOneShot("event:/NearDeath");
+    public bool PlayedNearDeathSound = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,7 +38,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Timer.TimeLeft < 2 && !PlayedNearDeathSound)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/NearDeath");
+            PlayedNearDeathSound = true;
+        }
     }
 
     public void AddCollectedItem(Collectable collectable)
@@ -51,7 +54,8 @@ public class Player : MonoBehaviour
 
     void SpawnRobot()
     {
-        foreach(RobotSpawner rs in GameManager.Instance.RobotSpawners)
+        //playedNearDeathSound = false;
+        foreach (RobotSpawner rs in GameManager.Instance.RobotSpawners)
         {
             if (rs.IsActive)
             {

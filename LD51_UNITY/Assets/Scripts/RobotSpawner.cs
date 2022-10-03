@@ -68,6 +68,7 @@ public class RobotSpawner : Interactable
             GameManager.Instance.Player.GetComponent<Player>().CurrentActiveRobot = robot.GetComponent<RobotController>();
             GameManager.Instance.Player.GetComponent<Player>().followRobotCamera.Follow = robot.transform;
             GameManager.Instance.Player.GetComponent<Player>().Timer.RestartTimer();
+            GameManager.Instance.Player.GetComponent<Player>().PlayedNearDeathSound = false;
             //apply item effects
             foreach (Collectable item in collectedItems)
             {
