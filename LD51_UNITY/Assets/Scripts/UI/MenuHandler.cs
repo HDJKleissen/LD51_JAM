@@ -10,6 +10,7 @@ public class MenuHandler : MonoBehaviour
 
     public void GoToScene(string scene)
     {
+        Time.timeScale = 1;
         SceneController.Instance.TransitionToScene(scene);
     }
 
@@ -21,14 +22,12 @@ public class MenuHandler : MonoBehaviour
 
     public void ToMainMenu()
     {
-        GameManager.Instance.stateMachine = GameManager.StateMachine.InMenu;
         DisableAllMenuStates();
         MainMenu?.SetActive(true);
     }
     
     public void ToOptionsScreen()
     {
-        GameManager.Instance.stateMachine = GameManager.StateMachine.InMenu;
         MainMenu?.SetActive(false);
         OptionsScreen?.SetActive(true);
 
