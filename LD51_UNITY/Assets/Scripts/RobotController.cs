@@ -17,6 +17,8 @@ public class RobotController : MonoBehaviour
     Vector2 input;
     Vector2 moveSpeedModifier;
 
+    private FMOD.Studio.EventInstance movementSound;
+
     void Start()
     {
         if (body == null)
@@ -27,6 +29,9 @@ public class RobotController : MonoBehaviour
         {
             robotAnimator = GetComponent<RobotAnimator>();
         }
+        movementSound = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerMovement");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(movementSound, transform, GetComponent<Rigidbody2D>());
+
 
     }
 
@@ -40,10 +45,13 @@ public class RobotController : MonoBehaviour
         if (prevInput == Vector2.zero && input != Vector2.zero)
         {
             // SFX: Start playing movement sound
+            movementSound.start();
+            movementSound.release();
         }
         else if (prevInput != Vector2.zero && input == Vector2.zero)
         {
             // SFX: Stop playing movement sound
+            movementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
 
 
