@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 863307556622108685}
   - component: {fileID: 863307556622108684}
   - component: {fileID: 518243394267602661}
+  - component: {fileID: 8758070063928649723}
   m_Layer: 5
   m_Name: Background Volume
   m_TagString: Untagged
@@ -91,7 +92,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8758070063928649723}
+        m_TargetAssemblyTypeName: BusController, Assembly-CSharp
+        m_MethodName: VolumeLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &518243394267602661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +125,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &8758070063928649723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863307556622108686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a1c5e0347324e50959e77cb744f6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busPath: MusicBus
 --- !u!1 &863307556657789902
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +337,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8322848554166951706}
+        m_TargetAssemblyTypeName: UISounds, Assembly-CSharp
+        m_MethodName: PlayBackSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 164986967217800844}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: ToMainMenu
@@ -935,6 +973,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8322848554166951706}
+        m_TargetAssemblyTypeName: UISounds, Assembly-CSharp
+        m_MethodName: PlayConfirmSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 164986967217800844}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: ToOptionsScreen
@@ -1331,6 +1381,7 @@ GameObject:
   - component: {fileID: 863307557531151773}
   - component: {fileID: 164986967217800844}
   - component: {fileID: 467505189}
+  - component: {fileID: 8322848554166951706}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1387,6 +1438,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SectionNum: 0
+--- !u!114 &8322848554166951706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863307557531151774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cec3bb4c02c14278a5ed92f1112e848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863307557583985145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,6 +1596,7 @@ GameObject:
   - component: {fileID: 863307557614702332}
   - component: {fileID: 863307557614702331}
   - component: {fileID: 1222647901071295260}
+  - component: {fileID: 2644089218456937426}
   m_Layer: 5
   m_Name: Sfx Volume
   m_TagString: Untagged
@@ -1613,7 +1677,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2644089218456937426}
+        m_TargetAssemblyTypeName: BusController, Assembly-CSharp
+        m_MethodName: VolumeLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1222647901071295260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,6 +1710,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2644089218456937426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863307557614702333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a1c5e0347324e50959e77cb744f6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busPath: SFXBus
 --- !u!1 &863307557676042197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,6 +1845,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8322848554166951706}
+        m_TargetAssemblyTypeName: UISounds, Assembly-CSharp
+        m_MethodName: PlayConfirmSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 164986967217800844}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: GoToScene
@@ -2314,6 +2415,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8322848554166951706}
+        m_TargetAssemblyTypeName: UISounds, Assembly-CSharp
+        m_MethodName: PlayBackSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 164986967217800844}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: Quit
