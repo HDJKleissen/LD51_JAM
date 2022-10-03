@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        
+        MusicManager.instance.section = 1;
     }
 
     private void OnEnable()
