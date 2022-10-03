@@ -10,6 +10,7 @@ public class SpeedUpItem : Collectable
     public override void PickUp()
     {
         Debug.Log("Picking up Item..");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SpeedPickup");
         GameManager.Instance.Player.AddCollectedItem(this);
         Destroy(this.gameObject);
     }
