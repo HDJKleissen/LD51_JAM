@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7713294192706370090}
   - component: {fileID: 7713294192706370094}
   - component: {fileID: 7713294192706370095}
-  m_Layer: 3
+  - component: {fileID: -6849013029408151571}
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7713294192706370091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.73, y: -3.64, z: -1}
+  m_LocalPosition: {x: 5.73, y: -3.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7713294192706370093
 SpriteRenderer:
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -467475133, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,6 +128,7 @@ MonoBehaviour:
   DoorCloseClip: {fileID: 7400000, guid: 33b1e4d4344c1314392ab81766074803, type: 2}
   OpenDoorSprite: {fileID: -467475133, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
   ClosedDoorSprite: {fileID: -1852593239, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
+  shadowCaster: {fileID: -6849013029408151571}
 --- !u!60 &7713294192706370095
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -157,3 +159,30 @@ PolygonCollider2D:
       - {x: 0.78, y: -0.6304951}
       - {x: -0.2475, y: -0.117592335}
   m_UseDelaunayMesh: 0
+--- !u!114 &-6849013029408151571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713294192706370091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: 0.40482092, y: -0.36223817, z: 0}
+  - {x: -0.653265, y: 0.18569994, z: 0}
+  - {x: -0.36938286, y: 0.3220513, z: 0}
+  - {x: 0.6777954, y: -0.2095244, z: 0}
+  m_ShapePathHash: -1421786587
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 84504

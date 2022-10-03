@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Door : Toggleable
 {
@@ -9,6 +10,7 @@ public class Door : Toggleable
     [SerializeField] Collider2D DoorCollider;
     [SerializeField] AnimationClip DoorOpenClip, DoorCloseClip;
     [SerializeField] Sprite OpenDoorSprite, ClosedDoorSprite;
+    [SerializeField] ShadowCaster2D shadowCaster;
 
     public void Start()
     {
@@ -19,6 +21,7 @@ public class Door : Toggleable
     private void Update()
     {
         spriteRenderer.sortingOrder = spriteRenderer.sprite == OpenDoorSprite ? 0 : 1;
+        shadowCaster.castsShadows = spriteRenderer.sprite == OpenDoorSprite ? false : true;
     }
 
     public override void HandleStateChange()

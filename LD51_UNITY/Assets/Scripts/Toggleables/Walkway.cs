@@ -30,6 +30,10 @@ public class Walkway : Toggleable
     void Start()
     {
         childRenderers = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
+        foreach (SpriteRenderer renderer in childRenderers)
+        {
+            renderer.sprite = IsToggledOn ? OnSprite : OffSprite;
+        }
     }
 
     // Update is called once per frame

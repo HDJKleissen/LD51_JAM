@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7713294192706370090}
   - component: {fileID: 7713294192706370094}
   - component: {fileID: 7713294192706370095}
+  - component: {fileID: -3863726029317413429}
   m_Layer: 3
   m_Name: DoorMirrored
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7713294192706370093
 SpriteRenderer:
@@ -127,6 +128,7 @@ MonoBehaviour:
   DoorCloseClip: {fileID: 7400000, guid: 33b1e4d4344c1314392ab81766074803, type: 2}
   OpenDoorSprite: {fileID: -467475133, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
   ClosedDoorSprite: {fileID: -1852593239, guid: e91d3c505eb62824d8b917bc8702509f, type: 3}
+  shadowCaster: {fileID: -3863726029317413429}
 --- !u!60 &7713294192706370095
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -157,3 +159,30 @@ PolygonCollider2D:
       - {x: 0.78, y: -0.6304951}
       - {x: -0.2475, y: -0.117592335}
   m_UseDelaunayMesh: 0
+--- !u!114 &-3863726029317413429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713294192706370091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: 0.42690897, y: -0.37859988, z: 0}
+  - {x: 0.70506525, y: -0.21244597, z: 0}
+  - {x: -0.3314762, y: 0.32750535, z: 0}
+  - {x: -0.6369028, y: 0.15589714, z: 0}
+  m_ShapePathHash: -1887484883
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 85234

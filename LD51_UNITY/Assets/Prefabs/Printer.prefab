@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1695983119552478962}
   - component: {fileID: 3071714129408936367}
   - component: {fileID: 5269323795058546068}
+  - component: {fileID: -2894205739638628078}
   m_Layer: 0
   m_Name: Printer
   m_TagString: robotSpawner
@@ -65,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 4560535668021939088}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1695983119552478964
 SpriteRenderer:
@@ -194,3 +195,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &-2894205739638628078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695983119552478967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -1.0582571, y: -0.62853193, z: 0}
+  - {x: -1.2109584, y: -0.46219134, z: 0}
+  - {x: 0.5469501, y: 0.24601948, z: 0}
+  - {x: 1.2107028, y: -0.23177862, z: 0}
+  - {x: 1.1179913, y: -0.35721183, z: 0}
+  - {x: 0.90530026, y: -0.3790264, z: 0}
+  - {x: 0.46355724, y: -0.11179924, z: 0}
+  - {x: -0.14724779, y: -0.40084076, z: 0}
+  - {x: 0.027267933, y: -0.71169686, z: 0}
+  - {x: -0.0051982403, y: -0.857584, z: 0}
+  - {x: -0.36539245, y: -0.8316765, z: 0}
+  - {x: -0.8562179, y: -0.52627397, z: 0}
+  m_ShapePathHash: -286671609
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 83554
