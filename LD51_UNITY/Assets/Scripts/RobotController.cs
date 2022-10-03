@@ -96,6 +96,7 @@ public class RobotController : MonoBehaviour
         if (walkway != null && walkway.IsToggledOn)
         {
             moveSpeedModifier = walkway.WalkwayDirection * walkway.WalkwaySpeed;
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Conveyor", gameObject);
         }
     }
 

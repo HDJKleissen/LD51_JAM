@@ -93,7 +93,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{6ebd5837-fab6-47ca-a0f8-05380eb13e44}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-12</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{6f168bc9-79c8-4acd-baba-b2e3945efdd4}</destination>
@@ -205,7 +205,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{5cab4111-88ab-476e-9598-ae1c56a68e77}">
 		<property name="volume">
-			<value>-12</value>
+			<value>-17</value>
 		</property>
 		<property name="name">
 			<value>Explosion</value>
@@ -411,7 +411,7 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="minimumExtent">
 			<value>180</value>
