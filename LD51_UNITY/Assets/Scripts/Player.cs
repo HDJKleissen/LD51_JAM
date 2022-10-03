@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        MusicManager.instance.section = 1;
+        MusicManager.instance.SetMusicSection(1);
     }
 
     private void OnEnable()

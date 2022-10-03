@@ -249,6 +249,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 941183182}
     m_Modifications:
+    - target: {fileID: 7522414245656181170, guid: 9bd603a9f3d65de49bf4124c39253ae2, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7522414246489450113, guid: 9bd603a9f3d65de49bf4124c39253ae2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -479,6 +483,7 @@ MonoBehaviour:
           m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
+  videoFileName: StoryCutscene
   player: {fileID: 1388467696}
 --- !u!114 &1175013725
 MonoBehaviour:

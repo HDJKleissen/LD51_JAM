@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 7522414245656181170, guid: 9bd603a9f3d65de49bf4124c39253ae2, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: b4f080c8d4e54b940adf4b9cf8e66ebb, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7522414246489450113, guid: 9bd603a9f3d65de49bf4124c39253ae2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -483,6 +483,7 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
+  videoFileName: VictoryCutscene.mp4
   player: {fileID: 1388467696}
 --- !u!114 &1175013725
 MonoBehaviour:

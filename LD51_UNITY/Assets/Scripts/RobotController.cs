@@ -80,8 +80,11 @@ public class RobotController : MonoBehaviour
         }
         Destroy(this);
     }
-    
 
+    private void OnDestroy()
+    {
+        movementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "collectable")
