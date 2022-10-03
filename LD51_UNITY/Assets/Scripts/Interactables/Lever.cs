@@ -16,6 +16,7 @@ public class Lever : Interactable
         SetCorrectSprite();
         HandleToggleables();
         // SFX: Oneshot lever sound can use Active bool for on/off diff
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Lever", gameObject);
     }
 
     // Start is called before the first frame update
