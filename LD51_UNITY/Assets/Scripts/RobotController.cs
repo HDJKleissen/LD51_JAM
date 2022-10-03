@@ -46,6 +46,14 @@ public class RobotController : MonoBehaviour
 
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            if (GameManager.Instance.Player.infoBox.activeInHierarchy)
+            {
+                StartCoroutine(CoroutineHelper.DelaySeconds(() => GameManager.Instance.Player.infoBox.SetActive(false), 1));
+            }
+        }
+
         if(BaseSpeed != MovementSpeed)
         {
             BaseSpeed = MovementSpeed;

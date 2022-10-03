@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public List<Collectable> CollectedItems;
     public bool PlayedNearDeathSound = false;
 
+    public GameObject infoBox;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         MusicManager.instance.SetMusicSection(1);
+        infoBox = InfoBox.CreateTemporaryPopUp("Need help interacting?", "Press the spacebar or bottom face button on controller to interact with green highlighted objects");
     }
 
     private void OnEnable()
