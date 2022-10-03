@@ -53,7 +53,7 @@
 			<destination>{353219a1-b7e5-4742-b51b-1acdc5bfbaa4}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{79f1efc0-1a32-4d73-9a44-9e8a6caafa81}</destination>
+			<destination>{8bc77cf7-ebda-4b45-b783-c47bf1412763}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{7e2d5fa0-1ad5-4a8a-9a04-3503feac16ac}" />
@@ -158,16 +158,16 @@
 	<object class="MixerBusFader" id="{3d120359-d006-481e-98d5-b4e45be7804e}" />
 	<object class="SpatialiserEffect" id="{babc9390-84a0-4398-928c-8a71e0efe39a}">
 		<property name="distanceRolloffType">
-			<value>3</value>
+			<value>2</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>0.5</value>
+			<value>2</value>
 		</property>
 		<property name="minimumExtent">
-			<value>100</value>
+			<value>180</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{c1ec34f8-c0be-468b-afe8-88f1c7debb48}" />

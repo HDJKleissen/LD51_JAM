@@ -55,7 +55,7 @@
 			<destination>{c8a864c1-2ee8-4a82-9a1b-8dbc772d6e80}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{79f1efc0-1a32-4d73-9a44-9e8a6caafa81}</destination>
+			<destination>{8bc77cf7-ebda-4b45-b783-c47bf1412763}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ac8bb385-2d47-40a4-b923-670ca21639ad}" />
@@ -92,6 +92,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6ebd5837-fab6-47ca-a0f8-05380eb13e44}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{6f168bc9-79c8-4acd-baba-b2e3945efdd4}</destination>
 		</relationship>
@@ -408,7 +411,7 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>0.150000006</value>
+			<value>2</value>
 		</property>
 		<property name="minimumExtent">
 			<value>180</value>
