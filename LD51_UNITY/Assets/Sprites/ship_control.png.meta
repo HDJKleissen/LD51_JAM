@@ -103,6 +103,54 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -110,10 +158,10 @@ TextureImporter:
       name: ship_control_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 240
+        y: 3259
+        width: 1320
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +179,10 @@ TextureImporter:
       name: ship_control_1
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 1838
+        y: 3259
+        width: 1320
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +200,10 @@ TextureImporter:
       name: ship_control_2
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 3439
+        y: 3259
+        width: 1321
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +221,10 @@ TextureImporter:
       name: ship_control_3
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 5038
+        y: 3259
+        width: 1319
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +242,10 @@ TextureImporter:
       name: ship_control_4
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 3200
-        width: 1600
-        height: 1600
+        x: 6639
+        y: 3259
+        width: 1320
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +263,10 @@ TextureImporter:
       name: ship_control_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1600
-        width: 1600
-        height: 1600
+        x: 240
+        y: 1658
+        width: 1320
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +284,10 @@ TextureImporter:
       name: ship_control_6
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1600
-        width: 1600
-        height: 1600
+        x: 1838
+        y: 1658
+        width: 1320
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +305,10 @@ TextureImporter:
       name: ship_control_7
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 1600
-        width: 1600
-        height: 1600
+        x: 3439
+        y: 1658
+        width: 1321
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +326,10 @@ TextureImporter:
       name: ship_control_8
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 1600
-        width: 1600
-        height: 1600
+        x: 5038
+        y: 1658
+        width: 1319
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +347,10 @@ TextureImporter:
       name: ship_control_9
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 1600
-        width: 1600
-        height: 1600
+        x: 6639
+        y: 1658
+        width: 1320
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +368,10 @@ TextureImporter:
       name: ship_control_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1600
-        height: 1600
+        x: 240
+        y: 57
+        width: 1321
+        height: 1523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,6 +381,48 @@ TextureImporter:
       bones: []
       spriteID: f2b396edc8c512b4bb234eab6999602a
       internalID: 150849838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_control_11
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 57
+        width: 1320
+        height: 1523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448f0fa5105bcb24fb04ec44c540b053
+      internalID: 841973802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_control_12
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 57
+        width: 1320
+        height: 1523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9974159ab117ab43ae2ee2ac2958dd4
+      internalID: 1352237528
       vertices: []
       indices: 
       edges: []
@@ -356,6 +446,8 @@ TextureImporter:
       ship_control_3: -2096301479
       ship_control_0: 1071145373
       ship_control_7: 1963065758
+      ship_control_12: 1352237528
+      ship_control_11: 841973802
       ship_control_9: -707535110
       ship_control_6: 1609892490
       ship_control_1: -1295760105

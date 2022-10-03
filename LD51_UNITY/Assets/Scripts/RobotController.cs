@@ -33,7 +33,18 @@ public class RobotController : MonoBehaviour
     void Update()
     {
         // -1 x is left, -1 y is down
+        Vector2 prevInput = input;
+
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (prevInput == Vector2.zero && input != Vector2.zero)
+        {
+            // SFX: Start playing movement sound
+        }
+        else if (prevInput != Vector2.zero && input == Vector2.zero)
+        {
+            // SFX: Stop playing movement sound
+        }
 
 
         if (Input.GetButtonDown("Interact") && closestInteractable != null)
@@ -52,6 +63,7 @@ public class RobotController : MonoBehaviour
 
     public void Deactivate()
     {
+        // SFX: Oneshot Death sound
         robotAnimator.PlayBreak();
         GetComponent<Collider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
