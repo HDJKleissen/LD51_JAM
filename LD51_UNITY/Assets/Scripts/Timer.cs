@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
 
     public event Action OnTimeOver;
 
+    bool running = true;
+
     bool TimeOverTriggered = false;
     // Start is called before the first frame update
     void Start()
@@ -24,10 +26,15 @@ public class Timer : MonoBehaviour
         TimeOverTriggered = false;
     }
 
+    public void Stop()
+    {
+        running = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.stateMachine != GameManager.StateMachine.InGame)
+        if (GameManager.Instance.stateMachine != GameManager.StateMachine.InGame || !running)
             return;
 
 

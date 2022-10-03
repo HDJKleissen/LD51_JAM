@@ -17,6 +17,7 @@ public class ShipConsole : Interactable
     public override void Interact()
     {
         interactStarted = true;
+        GameManager.Instance.Player.CurrentActiveRobot.InitEndGame();
         spriteRenderer.material.color = Color.white;
         animator.Play(RestartClip.GetClipName());
         // SFX: Oneshot restart

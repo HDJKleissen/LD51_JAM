@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,16 @@ public class RobotController : MonoBehaviour
 
     private FMOD.Studio.EventInstance movementSound;
     internal float BaseSpeed;
+
+    internal void InitEndGame()
+    {
+        movementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        GameManager.Instance.Player.StopBeeping();
+        GameManager.Instance.Player.Timer.Stop();
+        body.velocity = Vector2.zero;
+        enabled = false;
+        robotAnimator.InitEndGame();
+    }
 
     void Start()
     {

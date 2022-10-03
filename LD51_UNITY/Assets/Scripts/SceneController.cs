@@ -128,6 +128,7 @@ public class SceneController : Singleton<SceneController>
     {
         overlayObject = new GameObject("SceneSwitchOverlay");
         overlayImage = overlayObject.AddComponent<Image>();
+        overlayImage.color = new Color(0,0,0,0);
 
         //put the image on a seperate canvas for sorting 
         Canvas c = gameObject.AddComponent<Canvas>();

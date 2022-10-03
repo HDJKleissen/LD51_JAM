@@ -34,6 +34,15 @@ public class RobotAnimator : MonoBehaviour
         currentClip = Spawn;
     }
 
+    internal void InitEndGame()
+    {
+        StartCoroutine(
+            CoroutineHelper.Chain(
+            CoroutineHelper.WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f),
+            CoroutineHelper.Do(() => animator.speed = 0)
+        ));
+    }
+
     // Update is called once per frame
     void Update()
     {

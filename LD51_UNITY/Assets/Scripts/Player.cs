@@ -67,6 +67,11 @@ public class Player : MonoBehaviour
         Debug.LogError("No Robot Spawners are active..");
     }
 
+    public void StopBeeping()
+    {
+        // Stop playing beeping if it is playing
+    }
+
     void DeactivateRobot()
     {
         if (CurrentActiveRobot != null)
